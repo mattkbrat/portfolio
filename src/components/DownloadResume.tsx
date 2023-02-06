@@ -11,7 +11,7 @@ async function downloadFile(url: string, filename: string) {
 export default function DownloadResume() {
      return (
         <a
-            href='Resume - Matthew Bratrsovsky.pdf'
+            href='Resume.pdf'
             download="Resume - Matthew Bratrsovsky.pdf"
         >
             Download Resume
