@@ -1,0 +1,145 @@
+---
+// title: 'Resume'
+// layout: '../layouts/Layout.astro'
+// date created: 2022-02-21 14:41
+// date updated: 2023-07-01 10:40
+// published: 2023-07-01 10:40
+
+import "../styles/index.css";
+
+export const published = new Date("2023-02-05");
+export const updated = new Date("2023-02-05");
+import Layout from "../layouts/Layout.astro";
+
+export const title = "Resume";
+
+---
+
+
+<Layout title={title}>
+
+
+    <h1 data-heading="Matthew Bratrsovsky">Matthew Bratrsovsky</h1>
+    <p><strong>Full Stack Developer</strong></p>
+
+    <section>
+        <h2>
+            Table of Contents
+        </h2>
+        <ul class="toc">
+            <li>
+                <a href="#SKILLS">Skills</a>
+            </li>
+            <li>
+                <a href="#EXPERIENCE">Experience</a>
+            </li>
+            <li>
+                <a href="#EDUCATION">Education</a>
+            </li>
+            <li>
+                <a href="#PROJECTS">Projects</a>
+            </li>
+            <li>
+                <a href="#HOBBIES">Hobbies</a>
+            </li>
+        </ul>
+    </section>
+
+    <h2 data-heading="Summary">Summary</h2>
+    <p>I am a full stack developer with a passion for collaboration, creativity, and colleagues who share similar values. My ideal company is innovative and emphasizes community. I am most practiced in the <strong>PERN</strong> stack, and I love learning new technologies.</p>
+    <p>✉️ <a data-tooltip-position="top" aria-label="mailto://mattkbrat@pm.me" rel="noopener" class="external-link" href="mailto://mattkbrat@pm.me" target="_blank">mattkbrat @ pm.me</a> ⚈ 🔗 <a data-tooltip-position="top" aria-label="https://linkedin.com/in/mattkbrat" rel="noopener" class="external-link" href="https://linkedin.com/in/mattkbrat" target="_blank">linkedin.com/in/mattkbrat</a> ⚈ 🔗<a data-tooltip-position="top" aria-label="https://github.com/mattkbrat/" rel="noopener" class="external-link" href="https://github.com/mattkbrat/" target="_blank">github.com/mattkbrat</a></p>
+    <hr>
+    <h2 id="SKILLS" data-heading="SKILLS">SKILLS</h2>
+    <ul>
+        <li><strong>BACKEND</strong>: Node.js, Python, Golang, PostgreSQL, SQL, Docker, Linux, NGINX</li>
+        <li><strong>FRONTEND</strong>: React, Svelte, HTML, CSS, JavaScript, Vue, Next.JS, TypeScript</li>
+        <li><strong>SOFT</strong>: Leadership, Data Analysis, Entrepreneurship, Collaboration</li>
+    </ul>
+    <h2 id="EXPERIENCE" data-heading="WORK EXPERIENCE">WORK EXPERIENCE</h2>
+    <div class="text-logo-date">
+    <div class='text-logo'>
+        <a>
+            <img src="viaero-logo.png" alt="" width="100"  />
+        </a>
+        <h3>Viaero Wireless</h3>
+    </div>
+    May 2022 - Present
+    </div>
+
+    <p>Full Stack Developer</p>
+    <ul>
+        <li>Create web apps and deploy solutions using React.js, Docker, Go (Golang), and NGINX.</li>
+        <li>Analyze and integrate existing and emerging business requirements.</li>
+        <li>Interact, collaborate, and train end users.</li>
+    </ul>
+
+
+    <div class="text-logo-date">
+        <h3>CMB Auto Sales</h3>
+        May 2019 - Aug 2021
+    </div>
+
+    <ul>
+        <li>Communicated and negotiated vital business requirements.</li>
+        <li>Reduced transaction time from 30 to 7 minutes.</li>
+        <li>Increased customer awareness and reduced the percentage of customer debt and bad debts by ~40%.</li>
+    </ul>
+    <h2 id="EDUCATION" data-heading="EDUCATION">EDUCATION</h2>
+
+    <div class="text-logo-date">
+        <div class='text-logo'>
+            <a>
+                <img src="unc-logo.png" alt="" width="100"  />
+            </a>
+            <h3 data-heading="University of Northern Colorado">University of Northern Colorado</h3>
+        </div>
+        <p>2020 - 2022<br>
+    </div>
+
+        Bachelor of Business Administration - BBA, Computer Information Systems
+    <ul>
+        <li>Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family</li>
+    </ul>
+    <!--<h3 data-heading="Morgan Community College">Morgan Community College</h3>-->
+    <!--<p>2018 - 2020<br>-->
+    <!--    Associate of Arts - AA, Accounting and Business/Management</p>-->
+    <div class="text-logo-date">
+        <div class='text-logo'>
+            <a>
+                <img src="mcc.png" alt="" width="100"  />
+            </a>
+            <h3 data-heading="Morgan Community College">Morgan Community College</h3>
+        </div>
+        <p>2018 - 2020<br>
+    </div>
+
+            Associate of Arts - AA, Accounting and Business/Management
+
+    <h2 id="PROJECTS" data-heading="PROJECTS">PROJECTS</h2>
+    <h3 data-heading="Customer Cell Provisioning">Customer Cell Provisioning</h3>
+    <ul>
+        <li>Integrate user interaction with nodes on Viaero's Ericsson network through a web application built with NextJS, PostgreSQL, and Redis.</li>
+        <li>Serve as a replacement for SoapUI, providing an easy-to-use interface for making SOAP requests and analyze the responses.</li>
+        <li>Features an ADP-permission group permission system, an admin configuration panel, and a built-in XML/SOAP editor and formatter.</li>
+    </ul>
+    <h3 data-heading="Fiber Troubleshooting">Fiber Troubleshooting</h3>
+    <ul>
+        <li>Facilitated individual troubleshooting for 100+ corporate accounts. Features interactable history tracking with charts, ping tracing, with <strong>GoLang</strong>, and</li>
+        <li>Transformed existing, static information to a dynamic database with PostgreSQL and Prisma.</li>
+        <li>Integrated authentication and authorization with existing ADP groups through JSON web tokens and Iron Session.</li>
+    </ul>
+    <h3 data-heading="Tower Camera Site">Tower Camera Site</h3>
+    <ul>
+        <li>Capture <strong>RTSP</strong> streams with a <strong>Go</strong> web server using <strong>REST</strong> endpoints.</li>
+        <li>Communicate with Axis Communication's VAPIX endpoints with <strong>Digest Authentication</strong>.</li>
+        <li>Attractively layout and organize camera towers spanning several geographic sectors using <strong>NextJS</strong>.</li>
+        <li>Integrate <strong>Nodemailer</strong>, encryption, and hashing for a public-facing, invite-only user registration process; password management; and permission-based functionality.</li>
+    </ul>
+    <h3 data-heading="Dealer Management System">Dealer Management System</h3>
+    <ul>
+        <li>Rewrote an existing Visual Basic dealer management using <strong>Windows Presentation Foundation</strong> (<strong>WPF .NET</strong>).</li>
+        <li>Content management software to create and track transactions, administer receipts, create billing statements, and record inventory.</li>
+    </ul>
+    <h2 id="HOBBIES" data-heading="HOBBIES">HOBBIES</h2>
+    <p>Cooking, Personal Knowledge Management, Writing, Self-hosting, Gaming</p><div class="obsidian-metatable light"></div>
+</Layout>
