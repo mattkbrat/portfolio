@@ -72,16 +72,11 @@ th {
 @media (min-width: 768px) {
     .text-logo-date {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-between;
     }
 
-    .text-logo {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+
 
     .text-logo img {
         width: 50px;
