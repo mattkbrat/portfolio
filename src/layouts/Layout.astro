@@ -40,7 +40,9 @@ import DownloadResume from "../components/DownloadResume.tsx";
 </html>
 <style is:global>
   :root {
+    --wrapper-width: 800px;
     --accent: 124, 58, 237;
+    --accent-2: #615b51;
     --accent-gradient: linear-gradient(
       45deg,
       rgb(var(--accent)),
@@ -52,11 +54,12 @@ import DownloadResume from "../components/DownloadResume.tsx";
     --secondary-font: #969a97;
     --primary-background: #efece9;
     --link-color: #9b3190;
+    --solid-color: #fff
   }
 
   html {
     font-family: "Montserrat", sans-serif;
-    font-size: 62.5%;
+    font-size: 0.9rem;
   	background-color: var(--primary-background);
   }
 
@@ -86,8 +89,12 @@ import DownloadResume from "../components/DownloadResume.tsx";
   }
 
   .wrapper {
-    max-width: 800px;
+    max-width: var(--wrapper-width);
     padding-inline: 2rem;
+    background: var(--solid-color);
+    padding-block: 3rem;
+    box-shadow: 6px 6px 2px 1px rgba(var(--accent), 0.2);
+    outline: 1px solid var(--accent-2);
   }
 
   .divider {
@@ -122,6 +129,11 @@ import DownloadResume from "../components/DownloadResume.tsx";
     color: var(--link-color);
   }
 
+  h1, h2, h3 {
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+  }
+
   h1 {
     font-size: 2.5rem;
     margin: 0;
@@ -150,14 +162,20 @@ import DownloadResume from "../components/DownloadResume.tsx";
     justify-content: space-between;
     align-items: center;
   }
+  
+  @media (max-width: 800px) {
+    .main {
+      border: unset;
+    }
+  }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --primary-font: #cccccc;
       --primary-background: #0d0d0d;
       --link-color: #705e99;
+      --solid-color: black;
       background-color: var(--primary-background);
-
     }
   }
 
