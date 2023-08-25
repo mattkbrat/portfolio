@@ -27,7 +27,7 @@ import DownloadResume from "../components/DownloadResume.tsx";
 
   </header>
   <body>
-    <h1>
+    <h1 id="main-header">
       {title || "Hello World"}
     </h1>
     <div class="main">
@@ -204,6 +204,46 @@ import DownloadResume from "../components/DownloadResume.tsx";
       --link-color: #705e99;
       --solid-color: black;
       background-color: var(--primary-background);
+    }
+  }
+
+  @media print {
+    :root {
+      --primary-font: #000;
+      --primary-background: #fff;
+      --link-color: #000;
+      --solid-color: #fff;
+      background-color: var(--primary-background);
+    }
+    body {
+      margin-top: 0;
+    }
+    header {
+      display: none;
+    }
+
+    .main {
+      padding: 0.25rem;
+    }
+    .wrapper {
+      max-width: 100%;
+      padding-inline: 0;
+      background: var(--solid-color);
+      padding-block: 0;
+      box-shadow: none;
+      outline: none;
+    }
+
+    #toc {
+      display: none;
+    }
+
+    #main-header {
+      font-size: 1.5rem;
+    }
+
+    a {
+     text-decoration-color: transparent;
     }
   }
 

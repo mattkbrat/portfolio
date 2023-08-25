@@ -110,3 +110,13 @@ th {
     }
 
 }
+
+@media print {
+    .text-logo a {
+        display: none;
+    }
+
+    h2, p {
+        margin: 0;
+    }
+}
