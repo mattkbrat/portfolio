@@ -1,22 +1,23 @@
 ---
 date created: 2022-02-21 14:41
-date updated: 2023-07-01 10:40
+date updated: 2023-08-25 16:59
+jd: K051.100
+aliases:
+  - Resume
+  - K051.100 Matthew Bratrsovsky
 ---
-# Matthew Bratrsovsky
-
-**Full Stack Developer**
 
 ## Summary
 
-I am a full stack developer with a passion for collaboration, creativity, and colleagues who share similar values. My ideal company is innovative and emphasizes community. I am most practiced in the **PERN** stack, and I love learning new technologies.
+I am a **full stack developer** with a passion for collaboration, creativity and colleagues who share similar values. My ideal company is innovative and emphasizes community. I am most practiced in JavaScript, Go and Postgres and I love learning new technologies.
 
-✉️ [mattkbrat @ pm.me](mailto://mattkbrat@pm.me) ⚈ 🔗 [linkedin.com/in/mattkbrat](https://linkedin.com/in/mattkbrat) ⚈ 🔗[github.com/mattkbrat](https://github.com/mattkbrat/)
+✉️ [realzing @ pm.me](mailto://realzing@pm.me) ⚈ 🔗 [linkedin.com/in/mattkbrat](https://linkedin.com/in/mattkbrat) ⚈ 🔗[github.com/mattkbrat](https://github.com/mattkbrat/)
 
 ---
 
 ## SKILLS
 
-- **BACKEND**: Node.js, Python, Golang, PostgreSQL, SQL, Docker, Linux, NGINX
+- **BACKEND**: Node.js, Python, Go, PostgreSQL, SQL, Docker, Linux, NGINX
 - **FRONTEND**: React, Svelte, HTML, CSS, JavaScript, Vue, Next.JS, TypeScript
 - **SOFT**: Leadership, Data Analysis, Entrepreneurship, Collaboration
 
@@ -24,61 +25,76 @@ I am a full stack developer with a passion for collaboration, creativity, and co
 
 ### Viaero Wireless
 
+May 2022 – Present
 Full Stack Developer
-May 2022 - Present
 
-- Create web apps and deploy solutions using React.js, Docker, Go (Golang), and NGINX.
-- Analyze and integrate existing and emerging business requirements.
-- Interact, collaborate, and train end users.
+- Create web applications, manage servers and develop backend architecture for a telecommunication company.
+- Collaborate with stakeholders and train end users.
 
 ### CMB Auto Sales
 
 Software Developer, Intern
-May 2019 - Aug 2021
+May 2019 – Aug 2021
 
-- Communicated and negotiated vital business requirements.
-- Reduced transaction time from 30 to 7 minutes.
-- Increased customer awareness and reduced the percentage of customer debt and bad debts by ~40%.
+- Reduced the average transaction time from 30 to 7 minutes.
+- Increased customer awareness and reduced the percentage of bad debts by ~40%.
 
 ## EDUCATION
 
 ### University of Northern Colorado
 
-2020 - 2022
+2020 – 2022
 Bachelor of Business Administration - BBA, Computer Information Systems
 
 - Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
 
 ### Morgan Community College
 
-2018 - 2020
+2018 – 2020
 Associate of Arts - AA, Accounting and Business/Management
 
 ## PROJECTS
 
 ### Customer Cell Provisioning
 
-- Integrate user interaction with nodes on Viaero's Ericsson network through a web application built with NextJS, PostgreSQL, and Redis.
-- Serve as a replacement for SoapUI, providing an easy-to-use interface for making SOAP requests and analyze the responses.
-- Features an ADP-permission group permission system, an admin configuration panel, and a built-in XML/SOAP editor and formatter.
+**SOAP**, **XML**, **ADP**, **NextJS**, **PostgreSQL**, **Redis**
 
-### Fiber Troubleshooting
-
-- Facilitated individual troubleshooting for 100+ corporate accounts. Features interactable history tracking with charts, ping tracing, with **GoLang**, and
-- Transformed existing, static information to a dynamic database with PostgreSQL and Prisma.
-- Integrated authentication and authorization with existing ADP groups through JSON web tokens and Iron Session.
+- Accelerate XML training with an easy-to-use and recognizable web application.
+- Facilitate provisioner interactions with nodes on Viaero's Ericsson network.
+- Permissions-based functionality.
+- Created an XML/SOAP editor and formatter.
 
 ### Tower Camera Site
 
-- Capture **RTSP** streams with a **Go** web server using **REST** endpoints.
-- Communicate with Axis Communication's VAPIX endpoints with **Digest Authentication**.
-- Attractively layout and organize camera towers spanning several geographic sectors using **NextJS**.
-- Integrate **Nodemailer**, encryption, and hashing for a public-facing, invite-only user registration process; password management; and permission-based functionality.
+**RTSP**, **FFmpeg**, **Digest Authentication**, **Nodemailer**, **NextJS**, **Go**
+
+- Assist local weather channels with capturing RTSP streams.
+- Allow for editing recorded streams with a suite of abstracted FFmpeg functions and a node-based layout.
+- Communicate with Axis Communication's VAPIX endpoints.
+- Attractively layout and organize camera towers spanning several geographic sectors.
+- Administer a public-facing, invite-only site with permission-based routes and encrypted profiles.
+
+### Fiber Troubleshooting
+
+**Go**, **NextJS**, **ChartJS**
+
+- Facilitate individual troubleshooting for 100+ fiber-based, corporate accounts.
+- Ping traces individual and collective hosts, then displays the results in interactable charts.
+- Transformed existing, static information to a dynamic database.
+
+### [All About Paws Pet Spa LLC.](https://www.fortmorgangrooming.com)
+
+**AstroJS**, **Tailwind CSS**, **Preact**, **Cloudflare**, **GitHub**
+
+- Attract clients with images and information and mobile-first layouts.
+- Elegantly display an information-dense, static website.
+- Deploy with Cloudflare pages and GitHub.
 
 ### Dealer Management System
 
-- Rewrote an existing Visual Basic dealer management using **Windows Presentation Foundation** (**WPF .NET**).
-- Content management software to create and track transactions, administer receipts, create billing statements, and record inventory.
+**WPF .NET**
+
+- Create and track transactions, administer receipts, create billing statements and record inventory
 
 ## HOBBIES
 
