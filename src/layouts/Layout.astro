@@ -40,7 +40,7 @@ import DownloadResume from "../components/DownloadResume.tsx";
 </html>
 <style is:global>
   :root {
-    --wrapper-width: 800px;
+    --wrapper-width: 80%;
     --accent: 124, 58, 237;
     --accent-2: #615b51;
     --accent-gradient: linear-gradient(
@@ -159,13 +159,31 @@ import DownloadResume from "../components/DownloadResume.tsx";
 
   .header-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    height: 100%;
   }
   
   @media (max-width: 800px) {
     .main {
       border: unset;
+    }
+    .header-other {
+      display: none;
+    }
+
+    p {
+      text-align: left !important;
+    }
+
+    header {
+        padding-inline: 1rem;
+        padding-block: 2rem;
+    }
+
+    .header-nav {
+      text-align: left;
+        justify-content: flex-start;
     }
   }
 

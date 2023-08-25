@@ -7,8 +7,10 @@ export default function DownloadResume() {
                 color: 'white',
                 textDecoration: 'none',
                 backgroundColor: '#2c3e50',
-                padding: '10px 20px',
-                marginRight: '4rem',
+                padding: '1rem 0.5rem',
+                marginRight: '5%',
+                marginLeft: 'auto',
+                textAlign: 'right',
             }}
         >
             Download Resume
