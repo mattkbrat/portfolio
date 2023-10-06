@@ -161,7 +161,7 @@ header {
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-font: #cccccc;
-    --primary-background: #0d0d0d;
+    --primary-background: #131516;
     --link-color: #705e99;
     --solid-color: black;
     background-color: var(--primary-background);
