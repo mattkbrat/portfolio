@@ -11,12 +11,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^6.5.1",
-    "@astrojs/mdx": "^0.16.2",
-    "@astrojs/preact": "^2.2.1",
-    "@astrojs/sitemap": "^2.0.2",
-    "@fontsource/montserrat": "^4.5.14",
-    "astro": "^2.7.2",
-    "preact": "^10.15.1"
+    "@astrojs/cloudflare": "^7.5.1",
+    "@astrojs/mdx": "^1.1.1",
+    "@astrojs/preact": "^3.0.1",
+    "@astrojs/sitemap": "^3.0.1",
+    "@fontsource/montserrat": "^5.0.12",
+    "astro": "^3.2.3",
+    "preact": "^10.18.1"
   }
 }
