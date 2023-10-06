@@ -13,5 +13,6 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   integrations: [mdx(), preact(), sitemap()],
   output: "server",
+  site: "https://www.mattkbrat.com",
   adapter: cloudflare()
 });
