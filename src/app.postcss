@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/* modern theme */
+@font-face {
+	font-family: 'Quicksand';
+	src: url('/fonts/Quicksand.ttf');
+	font-display: swap;
+}    
+/* vintage theme */
+@font-face {
+	font-family: 'Abril Fatface';
+	src: url('/fonts/AbrilFatface.ttf');
+	font-display: swap;
+}
+
+@layer utilities {
+
+  .selected-heading {
+      @apply underline text-2xl text-primary-400-500-token p-2 border-l-2 -ml-2;
+    }
+
+}
+
+h2 {  
+    @apply text-xl
+}
+
+strong {
+    @apply text-primary-400-500-token
+}
+
+ul {
+    @apply list-disc
+}
+
+li {
+    @apply ml-2
+  }
