@@ -4,6 +4,7 @@
 	import { page } from '$app/stores';
 
 	import SvelteMarkdown from 'svelte-markdown';
+	import ArchivedResume from '$lib/archived-resume.svelte';
 
 	let resumeContent = '';
 
@@ -77,7 +78,9 @@
 			</div>
 		</div>
 	{:else}
-		<h2>Please Wait</h2>
-		<p>I am pulling the latest resume from GitHub</p>
+		<div class="flex flex-col gap-4">
+			<span class="text-sm"> Please wait, pulling latest resume... </span>
+			<ArchivedResume />
+		</div>
 	{/if}
 </div>
