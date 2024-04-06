@@ -1,13 +1,4 @@
----
-id: Matthew Bratrsovsky
-aliases:
-  - Resume
-  - K051.100 Matthew Bratrsovsky
-tags: []
-date_created: 2022-02-21 14:41
-date_updated: 2024-04-06 14:55
-jd: K051.100
----
+export const resume = `
 
 <section class="profile" style="text-align: center">
 	<h1>Matthew Bratrsovsky</h1>

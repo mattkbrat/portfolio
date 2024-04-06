@@ -23,7 +23,7 @@
 
 <div class="flex flex-col items-center justify-center">
 	<div
-		class="lg:btn-group-vertical flex-wrap btn-group justify-around lg:fixed top-0 w-full items-end ml-auto pr-2"
+		class="lg:btn-group-vertical flex-wrap btn-group justify-around lg:fixed top-0 w-full items-end ml-auto pr-2 print:hidden"
 	>
 		<button
 			class="btn rounded-none flex flex-row-reverse lg:flex-row gap-2"
@@ -154,21 +154,23 @@
 			</a>
 		</div>
 	</div>
-	<label class="sr-only" for="github-corner"> Github </label>
-	<a
-		id="github-corner"
-		class="hidden md:block"
-		target="_blank"
-		href="https://github.com/mattkbrat/portfolio"
-	>
-		<div
-			class="fixed bottom-0 left-0 w-[200px] h-[200px] bg-black/5 -ml-[150px] -mb-[100px] border-t-2 border-surface-200-700-token cursor-pointer rotate-45"
-		></div>
-	</a>
+	<section id="github-corner" class="print:hidden">
+		<label class="sr-only" for="github-corner"> Github </label>
+		<a
+			id="github-corner"
+			class="hidden md:block"
+			target="_blank"
+			href="https://github.com/mattkbrat/portfolio"
+		>
+			<div
+				class="fixed bottom-0 left-0 w-[200px] h-[200px] bg-black/5 -ml-[150px] -mb-[100px] border-t-2 border-surface-200-700-token cursor-pointer rotate-45"
+			></div>
+		</a>
+	</section>
 	<div
-		class="z-10 outline outline-1 bg-white/75 dark:bg-black/75 -outline-offset-4 outline-primary-300-600-token m-2 p-4 lg:mx-64 lg:my-8 lg:p-8"
+		class="z-10 outline outline-1 print:outline-transparent bg-white/75 dark:bg-black/75 -outline-offset-4 outline-primary-300-600-token m-2 p-4 lg:mx-64 lg:my-8 lg:p-8 print:!mx-8"
 	>
-		<div class="self-center max-w-[75ch]">
+		<div class="self-center max-w-[75ch] print:max-w-max">
 			<slot />
 		</div>
 	</div>

@@ -55,31 +55,32 @@
 </script>
 
 <div class="container h-full mx-auto pt-4 flex justify-center items-center text-lg/6">
-	{#if resumeContent}
+	{#if false && resumeContent}
 		<div class="space-y-5">
 			<h1 class="h1">Matthew Bratrsovsky</h1>
 
-			<h3>TOC</h3>
-			<ul class="list-disc">
-				{#each headings as heading}
-					{@const heading_text = heading.replace('-', ' ')}
-					<li>
-						<a href={`#${heading}`}>
-							{heading_text}
-						</a>
-					</li>
-				{/each}
-			</ul>
+			<section id="table-of-contents" class="print:hidden">
+				<h3>Table of Contents</h3>
+				<ul class="list-disc">
+					{#each headings as heading}
+						{@const heading_text = heading.replace('-', ' ')}
+						<li>
+							<a href={`#${heading}`}>
+								{heading_text}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</section>
 			<SvelteMarkdown source={resumeContent} />
 
-			<div class="outline outline-2 outline-offset-2 px-4 text-sm">
+			<div class="outline outline-2 outline-offset-2 px-4 text-sm print:hidden">
 				<h2 class="!text-sm underline">Frontmatter</h2>
 				<SvelteMarkdown source={frontmatter} />
 			</div>
 		</div>
 	{:else}
 		<div class="flex flex-col gap-4">
-			<span class="text-sm"> Please wait, pulling latest resume... </span>
 			<ArchivedResume />
 		</div>
 	{/if}
