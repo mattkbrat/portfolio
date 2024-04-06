@@ -3,7 +3,9 @@ id: Matthew Bratrsovsky
 aliases:
   - Resume
   - K051.100 Matthew Bratrsovsky
-tags: []
+tags:
+  - '#resume'
+  - '#professional'
 date_created: 2022-02-21 14:41
 date_updated: 2024-04-06 14:55
 jd: K051.100
@@ -149,4 +151,4 @@ Morgan Community College
 ## HOBBIES
 
 Cooking, Personal Knowledge Management, Writing, Self-hosting, Gaming
-`
+
