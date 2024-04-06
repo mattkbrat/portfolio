@@ -1,57 +1,57 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
+import { onMount } from "svelte";
+import { page } from "$app/stores";
 
-	import SvelteMarkdown from 'svelte-markdown';
-	import ArchivedResume from '$lib/archived-resume.svelte';
+import SvelteMarkdown from "svelte-markdown";
+import ArchivedResume from "$lib/archived-resume.svelte";
 
-	let resumeContent = '';
+let resumeContent = "";
 
-	let headings: string[] = [];
-	let frontmatter = '';
+let headings: string[] = [];
+let frontmatter = "";
 
-	const handleHeadingChange = () => {
-		Array.from(document.getElementsByTagName('h2')).forEach((e) => {
-			const filter = $page.url.hash.toLowerCase();
-			const lookup = e.id.toLowerCase();
+const handleHeadingChange = () => {
+	Array.from(document.getElementsByTagName("h2")).forEach((e) => {
+		const filter = $page.url.hash.toLowerCase();
+		const lookup = e.id.toLowerCase();
 
-			const isSelected = lookup && filter.endsWith(lookup);
-			if (isSelected) {
-				e.classList.add('selected-heading');
-				e.scrollIntoView();
-			} else {
-				e.classList.remove('selected-heading');
-			}
-		});
-	};
-
-	$: if (resumeContent.length > 0 && headings.length == 0) {
-		setTimeout(() => {
-			const docHeadings = document.getElementsByTagName('h2');
-			headings = Array.from(docHeadings)
-				.map((h) => h.id)
-				.filter(Boolean)
-				.slice(1);
-		}, 150);
-	}
-
-	onMount(() => {
-		fetch('https://raw.githubusercontent.com/mattkbrat/portfolio/main/README.md')
-			.then(async (res) => {
-				const allContent = await res.text();
-
-				const [, properties, ...content] = allContent.split('---');
-
-				frontmatter = properties.trim().split('\n').join('\n\n');
-				resumeContent = content.join('\n');
-			})
-			.then(handleHeadingChange);
+		const isSelected = lookup && filter.endsWith(lookup);
+		if (isSelected) {
+			e.classList.add("selected-heading");
+			e.scrollIntoView();
+		} else {
+			e.classList.remove("selected-heading");
+		}
 	});
+};
 
-	$: if ($page.url.hash) {
-		handleHeadingChange();
-	}
+$: if (resumeContent.length > 0 && headings.length == 0) {
+	setTimeout(() => {
+		const docHeadings = document.getElementsByTagName("h2");
+		headings = Array.from(docHeadings)
+			.map((h) => h.id)
+			.filter(Boolean)
+			.slice(1);
+	}, 150);
+}
+
+onMount(() => {
+	fetch("https://raw.githubusercontent.com/mattkbrat/portfolio/main/README.md")
+		.then(async (res) => {
+			const allContent = await res.text();
+
+			const [, properties, ...content] = allContent.split("---");
+
+			frontmatter = properties.trim().split("\n").join("\n\n");
+			resumeContent = content.join("\n");
+		})
+		.then(handleHeadingChange);
+});
+
+$: if ($page.url.hash) {
+	handleHeadingChange();
+}
 </script>
 
 <div class="container h-full mx-auto pt-4 flex justify-center items-center text-lg/6">

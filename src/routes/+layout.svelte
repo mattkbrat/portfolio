@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import '../app.postcss';
+import { onMount } from "svelte";
+import "../app.postcss";
 
-	let isDark = false;
-	$: stroke = isDark ? 'black' : 'white';
+let isDark = false;
+$: stroke = isDark ? "black" : "white";
 
-	const toggleTheme = (toggle = true) => {
-		const htmlElement = document.getElementsByTagName('html')[0];
-		isDark = htmlElement.classList.contains('dark');
-		if (!toggle) return;
-		if (isDark) {
-			htmlElement.classList.remove('dark');
-		} else {
-			htmlElement.classList.add('dark');
-		}
-	};
+const toggleTheme = (toggle = true) => {
+	const htmlElement = document.getElementsByTagName("html")[0];
+	isDark = htmlElement.classList.contains("dark");
+	if (!toggle) return;
+	if (isDark) {
+		htmlElement.classList.remove("dark");
+	} else {
+		htmlElement.classList.add("dark");
+	}
+};
 
-	// onMount(() => toggleTheme(false));
+// onMount(() => toggleTheme(false));
 </script>
 
 <title> Matthew Bratrsovsky </title>
