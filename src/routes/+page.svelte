@@ -55,7 +55,7 @@ $: if ($page.url.hash) {
 </script>
 
 <div class="container h-full mx-auto pt-4 flex justify-center items-center text-lg/6">
-	{#if false && resumeContent}
+	{#if resumeContent}
 		<div class="space-y-5">
 			<h1 class="h1">Matthew Bratrsovsky</h1>
 
