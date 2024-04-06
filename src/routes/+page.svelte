@@ -57,7 +57,7 @@ $: if ($page.url.hash) {
 <div class="container h-full mx-auto pt-4 flex justify-center items-center text-lg/6">
 	{#if resumeContent}
 		<div class="space-y-5">
-			<h1 class="h1">Matthew Bratrsovsky</h1>
+			<h1 class="h1 print:hidden">Matthew Bratrsovsky</h1>
 
 			<section id="table-of-contents" class="print:hidden">
 				<h3>Table of Contents</h3>
