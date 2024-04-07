@@ -1,4 +1,3 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
@@ -7,7 +6,6 @@
 	import ArchivedResume from '$lib/archived-resume.svelte';
 
 	import TableOfContents from '$lib/TableOfContents.svelte';
-	import { goto } from '$app/navigation';
 
 	let resumeContent = '';
 
@@ -40,16 +38,6 @@
 			}
 			setSelected(v.id, false);
 		});
-
-		// visibilities.forEach((v) => {
-		// 	const e = document.getElementById(v.id);
-		// 	if (!e) return;
-		// 	if (v.visible) {
-		// 		e.classList.add('selected-heading');
-		// 	} else {
-		// 		e.classList.remove('selected-heading');
-		// 	}
-		// });
 	}
 
 	function onVisible(
@@ -60,7 +48,7 @@
 			id: element.id,
 			visible: false
 		});
-		new IntersectionObserver((entries, observer) => {
+		new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				const index = visibilities.findIndex((v) => v.id === element.id);
 				const isVisible = entry.intersectionRatio > 0;
@@ -69,21 +57,6 @@
 		}).observe(element);
 		if (!callback) return new Promise((r) => (callback = r));
 	}
-
-	const handleHeadingChange = (manualFilter?: string) => {
-		Array.from(document.getElementsByTagName('h2')).forEach((e) => {
-			const filter = manualFilter || $page.url.hash.toLowerCase();
-			const lookup = e.id.toLowerCase();
-
-			const isSelected = lookup && filter.endsWith(lookup);
-			if (isSelected) {
-				e.classList.add('selected-heading');
-				!manualFilter && e.scrollIntoView();
-			} else {
-				e.classList.remove('selected-heading');
-			}
-		});
-	};
 
 	$: if (resumeContent.length > 0 && headings.length == 0) {
 		setTimeout(() => {
@@ -101,21 +74,17 @@
 	}
 
 	onMount(() => {
-		fetch('https://raw.githubusercontent.com/mattkbrat/portfolio/main/README.md')
-			.then(async (res) => {
+		fetch('https://raw.githubusercontent.com/mattkbrat/portfolio/main/README.md').then(
+			async (res) => {
 				const allContent = await res.text();
 
 				const [, properties, ...content] = allContent.split('---');
 
 				frontmatter = properties.trim().split('\n').join('\n\n');
 				resumeContent = content.join('\n');
-			})
-			.then(handleHeadingChange);
+			}
+		);
 	});
-
-	$: if ($page.url.hash) {
-		handleHeadingChange();
-	}
 </script>
 
 <div class="container h-full mx-auto pt-4 flex justify-center items-center text-lg/6">
