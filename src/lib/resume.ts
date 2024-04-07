@@ -1,5 +1,4 @@
 export const resume = `
-
 <section class="profile" style="text-align: center">
 	<h1>Matthew Bratrsovsky</h1>
 	<div
@@ -16,8 +15,6 @@ export const resume = `
 
 I am a **full stack developer** with a passion for collaboration, creativity and colleagues who share similar values. My ideal company is innovative and emphasizes community. I am most practiced in JavaScript, Rust and Postgres and I love learning new technologies.
 
----
-
 ## SKILLS
 
 - **BACKEND**: Node.js, Rust, PostgreSQL, SQL, Docker, Linux, NGINX, Python, Go
@@ -26,7 +23,7 @@ I am a **full stack developer** with a passion for collaboration, creativity and
 
 ## WORK EXPERIENCE
 
-<table id="title-date-table">
+<table style="width: 100%" id="title-date-table">
 <tr>
 <th><h3>Viaero Wireless</h3></th>
 <td>May 2022 – Current</td>
@@ -37,7 +34,7 @@ I am a **full stack developer** with a passion for collaboration, creativity and
 - Create web applications, manage servers and develop backend architecture for a telecommunication company.
 - Collaborate with stakeholders and train end users.
 
-<table id="title-date-table">
+<table style="width: 100%" id="title-date-table">
 <tr>
 <th><h3>
 <a href="https://cmbautosales.com">
@@ -56,7 +53,7 @@ CMB Auto Sales
 
 ## EDUCATION
 
-<table id="title-date-table">
+<table style="width: 100%" id="title-date-table">
 <tr>
 <th><h3>
 <a>
@@ -72,7 +69,7 @@ University of Northern Colorado
 
 - Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
 
-<table id="title-date-table">
+<table style="width: 100%" id="title-date-table">
 <tr>
 <th><h3>
 <a>
@@ -140,4 +137,5 @@ Morgan Community College
 ## HOBBIES
 
 Cooking, Personal Knowledge Management, Writing, Self-hosting, Gaming
+
 `;
