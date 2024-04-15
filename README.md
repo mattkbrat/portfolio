@@ -7,7 +7,7 @@ tags:
   - '#resume'
   - '#professional'
 date_created: 2022-02-21 14:41
-date_updated: 2024-04-06 14:55
+date_updated: 2024-04-15 15:40
 jd: K051.100
 ---
 
@@ -18,7 +18,7 @@ jd: K051.100
 		style="display: flex; text-align: center; justify-content: space-around; flex: 1"
 	>
 		<a target="_blank" href="https://linkedin.com/in/mattkbrat">linkedin.com/in/mattkbrat</a>
-		<a target="_blank" href="mailto:realzing@pm.me">realzing@pm.me</a>
+		<a target="_blank" href="mailto:oldlimited@proton.me">oldlimited@proton.me</a>
 		<a target="_blank" href="https://github.com/mattkbrat">github.com/mattkbrat</a>
 	</div>
 </section>
@@ -31,7 +31,7 @@ I am a **full stack developer** with a passion for collaboration, creativity and
 
 ## SKILLS
 
-- **BACKEND**: Node.js, Rust, PostgreSQL, SQL, Docker, Linux, NGINX, Python, Go
+- **BACKEND**: Node.js, Rust, PostgreSQL, SQL, Docker, Linux, NGINX, Python, Go, S3, ElasticSearch, MongoDB
 - **FRONTEND**: Next.JS, React, Svelte, TypeScript, JavaScript, HTML, CSS, Vue
 - **SOFT**: Leadership, Data Analysis, Entrepreneurship, Collaboration
 
@@ -42,8 +42,11 @@ I am a **full stack developer** with a passion for collaboration, creativity and
 <th><h3>Viaero Wireless</h3></th>
 <td>May 2022 – Current</td>
 </tr>
-</table>
+<tr>
+<td>
 <i>Full Stack Developer</i>
+</td>
+</table>
 
 - Create web applications, manage servers and develop backend architecture for a telecommunication company.
 - Collaborate with stakeholders and train end users.
@@ -57,8 +60,11 @@ CMB Auto Sales
 </h3></th>
 <td>May 2019 – Current</td>
 </tr>
-</table>
+<tr>
+<td>
 <i>Software Developer, Contract</i>
+</td>
+</table>
 
 - Wrote a desktop applications in Rust and SQLite to manage customers, inventory, and transactions.
 - Implemented credit application submissions using Google Cloud Platform and Cloudflare R2.
@@ -70,61 +76,65 @@ CMB Auto Sales
 <table id="title-date-table">
 <tr>
 <th><h3>
-<a>
+<p>
 University of Northern Colorado 
-</a>
+</p>
 </h3></th>
 <td>
 2020 – 2022
 </td>
 </tr>
-</table>
+<tr>
+<td>
 <i>Bachelor of Business Administration, Computer Information Systems</i>
+</td>
+</tr>
+</table>
 
 - Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
 
 <table id="title-date-table">
 <tr>
 <th><h3>
-<a>
+<p>
 Morgan Community College
-</a>
+</p>
 </h3></th>
 <td>
 2018 – 2020
 </td>
 </tr>
-</table>
+<tr>
+<td>
 <i>Associate of Arts - AA, Accounting and Business/Management</i>
+</td>
+</table>
 
 ## PROJECTS
 
 ### Netops Applications
 
-**Rust**, **Python**, **NodeJS**, **PostgreSQL**, **Redis**, **ElasticSearch**, **IMAP**, **Discourse**
 
+- **Rust**, **Python**, **NodeJS**, **PostgreSQL**, **Redis**, **ElasticSearch**, **IMAP**, **Discourse**, **S3**
 - Delivered several suites of software and web applications to facilitate and improve business operations.
 - Troubleshooted procedural bottlenecks with company leaders and implemented several solutions to increase efficiency.
 
 ### [AutoFLP: Dealer Management System](https://github.com/mattkbrat/autoflp-desktop)
 
-**RUST**, **CSS**, **HTML**, **JS**, **Cloudflare R2**, **Google Cloud Platform**, **S3**
-
+- **RUST**, **CSS**, **HTML**, **JS**, **Cloudflare R2**, **Google Cloud Platform**, **S3**
 - A desktop suite for auto dealerships built with Rust for small, family owned businesses.
 - Features account and inventory management, credit application reviews, and support for billing, payments, and forms.
 
 ### [All About Paws Pet Spa LLC.](https://www.fortmorgangrooming.com)
 
-**AstroJS**, **Tailwind CSS**, **Preact**, **Cloudflare**, **GitHub**
-
+- **AstroJS**, **Tailwind CSS**, **Preact**, **Cloudflare**, **GitHub**
 - Attract clients with images and information and mobile-first layouts.
 - Elegantly display an information-dense, static website.
 - Deploy with Cloudflare pages and GitHub.
 
 ### Customer Cell Provisioning
 
-**SOAP**, **XML**, **ADP**, **NextJS**, **PostgreSQL**, **Redis**
-
+- **SOAP**, **XML**, **ADP**, **NextJS**, **PostgreSQL**, **Redis**
 - Accelerate XML training with an easy-to-use and recognizable web application.
 - Facilitate provisioner interactions with nodes on Viaero's Ericsson network.
 - Permissions-based functionality.
@@ -132,8 +142,7 @@ Morgan Community College
 
 ### Tower Camera Site
 
-**Rust**, **RTSP**, **FFmpeg**, **Digest Authentication**, **Nodemailer**, **NextJS**
-
+- **Rust**, **RTSP**, **FFmpeg**, **Digest Authentication**, **Nodemailer**, **NextJS**
 - Assist local weather channels with capturing RTSP streams.
 - Administer a public-facing, invite-only site with permission-based routes and encrypted profiles.
 - Allow for editing recorded streams with a suite of abstracted FFmpeg functions and a node-based layout, written in an REST-ful Rust application.
@@ -142,8 +151,7 @@ Morgan Community College
 
 ### Fiber Troubleshooting
 
-**Go**, **NextJS**, **ChartJS**
-
+- **Go**, **NextJS**, **ChartJS**
 - Facilitate individual troubleshooting for 100+ fiber-based, corporate accounts.
 - Ping traces individual and collective hosts, then displays the results in interactable charts.
 - Transformed existing, static information to a dynamic database.
@@ -151,4 +159,3 @@ Morgan Community College
 ## HOBBIES
 
 Cooking, Personal Knowledge Management, Writing, Self-hosting, Gaming
-

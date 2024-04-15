@@ -1,19 +1,19 @@
 <script lang="ts">
-	import '../app.postcss';
+import "../app.postcss";
 
-	let isDark = false;
-	$: stroke = isDark ? 'black' : 'white';
+let isDark = false;
+$: stroke = isDark ? "black" : "white";
 
-	const toggleTheme = (toggle = true) => {
-		const htmlElement = document.getElementsByTagName('html')[0];
-		isDark = htmlElement.classList.contains('dark');
-		if (!toggle) return;
-		if (isDark) {
-			htmlElement.classList.remove('dark');
-		} else {
-			htmlElement.classList.add('dark');
-		}
-	};
+const toggleTheme = (toggle = true) => {
+	const htmlElement = document.getElementsByTagName("html")[0];
+	isDark = htmlElement.classList.contains("dark");
+	if (!toggle) return;
+	if (isDark) {
+		htmlElement.classList.remove("dark");
+	} else {
+		htmlElement.classList.add("dark");
+	}
+};
 </script>
 
 <title> Matthew Bratrsovsky </title>
@@ -151,7 +151,7 @@
 			</a>
 		</div>
 	</div>
-	<section id="github-corner" class="print:hidden">
+	<section id="github-corner-section" class="print:hidden">
 		<label class="sr-only" for="github-corner"> Github </label>
 		<a
 			id="github-corner"
@@ -160,8 +160,10 @@
 			href="https://github.com/mattkbrat/portfolio"
 		>
 			<div
-				class="fixed bottom-0 left-0 w-[200px] h-[200px] bg-black/5 -ml-[150px] -mb-[100px] border-t-2 border-surface-200-700-token cursor-pointer rotate-45"
-			></div>
+				class="fixed bottom-0 left-0 w-[200px] h-[200px] bg-black/5 -ml-[150px] -mb-[100px] border-t-2 border-surface-200-700-token cursor-pointer rotate-45 text-[0px]"
+			>
+				Github
+			</div>
 		</a>
 	</section>
 	<div
