@@ -50,7 +50,7 @@ I am a **full stack developer** with a passion for collaboration, creativity and
 </td>
 </table>
 
-- Lead various teams to success by analyzing work patterns and building deeply connected tooling.
+- Lead various teams to success by analyzing work patterns and building both deeply connected and disparate tooling.
 - Create web applications, CLI tooling, and various backend architecture.
 - Collaborate with stakeholders and train end users.
 
