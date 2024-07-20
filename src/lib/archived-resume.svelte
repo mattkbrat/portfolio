@@ -1,6 +1,6 @@
 <script lang="ts">
 import { resume } from "./resume";
-import SvelteMarkdown from "svelte-markdown";
+import SvelteMarkdown from "./SvelteMarkdown.svelte";
 </script>
 
-<SvelteMarkdown source={resume} />
+<SvelteMarkdown markdown={resume} id="archived" />
