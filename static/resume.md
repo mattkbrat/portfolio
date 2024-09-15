@@ -14,7 +14,6 @@ jd: K051.100
 <section class="profile" style="text-align: center">
  <h1 id="profile-links">Matthew Bratrsovsky</h1>
  <div
-  style="display: flex; text-align: center; justify-content: space-around; flex: 1"
     id="profile-links__content"
  >
   <a target="_blank" href="https://linkedin.com/in/mattkbrat">linkedin.com/in/mattkbrat</a>

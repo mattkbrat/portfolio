@@ -35,15 +35,15 @@
 }
 
 #profile-links__content {
-	@apply flex-col xl:flex-row flex-wrap text-center w-full items-center;
+	@apply flex flex-col xl:flex-row flex-wrap justify-evenly flex-1 text-center w-full items-center gap-x-2;
 }
 
 a { 
-	@apply hover:text-primary-400-500-token hover:font-extrabold transition-colors;
+	@apply hover:text-primary-400-500-token hover:font-extrabold transition-colors  ;
 }
 
 #profile-links__content > a {
-	@apply min-w-max flex-1 justify-center;
+	@apply flex-1 min-w-max justify-center;
 }
 
 .external-link {
