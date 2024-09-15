@@ -93,15 +93,20 @@ $: if (resumeContent.length > 0 && $headings.length === 0) {
 
 		const asArray = Array.from(docHeadings).filter((h) => h.id);
 
-		asArray.forEach((e) => {
-			onVisible(e, () => {});
-		});
+		const profileLinks = document.getElementById("profile-links");
 
+		if (profileLinks instanceof HTMLHeadingElement) {
+			asArray.unshift(profileLinks);
+		}
+		// asArray.push("profile-links");
+		for (const heading of asArray) {
+			onVisible(heading, () => {});
+		}
 		headings.set(
 			asArray
 				.map((h) => {
 					return {
-						heading: h.innerText,
+						heading: h.innerText.length < 10 ? h.innerText : h.id,
 						href: `#${h.id}`,
 						id: h.id,
 					};
@@ -136,6 +141,9 @@ const styleAnchors = () => {
 		});
 };
 
+$: if (!$page.url.hash && browser) {
+	goto("#profile-links", { replaceState: true });
+}
 onMount(() => {
 	console.log(
 		"%cWell, Howdy! : - )",
