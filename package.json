@@ -17,7 +17,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.7.3",
 		"@playwright/test": "^1.47.1",
-		"@skeletonlabs/skeleton": "2.9.0",
+		"@skeletonlabs/skeleton": "3.0.0-next.4",
+		"@skeletonlabs/skeleton-svelte": "1.0.0-next.8",
 		"@skeletonlabs/tw-plugin": "0.3.1",
 		"@sveltejs/adapter-auto": "^3.2.4",
 		"@sveltejs/adapter-cloudflare": "^4.7.2",
