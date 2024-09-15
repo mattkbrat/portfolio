@@ -36,7 +36,11 @@ $: isInline = style === "inline";
 			>
 				{#each $headings as { heading, href }}
 					<li class:ml-0={!isInline} class="dark:hover:text-gray-200 hover:text-gray-800">
-						<a class:text-primary-400-500-token={href === `#${$position}`} {href}>
+						<a
+							class:text-primary-400-500-token={href === `#${$position}`}
+							{href}
+							data-sveltekit-replacestate
+						>
 							{heading}
 						</a>
 					</li>
