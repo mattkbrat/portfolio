@@ -6,36 +6,39 @@ aliases:
 tags:
   - '#resume'
   - '#professional'
-date_created: 2022-02-21 14:41
-date_updated: 2024-07-19 15:40
+date_created: 2022-02-21
+date_updated: 2024-09-15
 jd: K051.100
 ---
 
 <section class="profile" style="text-align: center">
-	<h1 id="profile-links">Matthew Bratrsovsky</h1>
-	<div
-		style="display: flex; text-align: center; justify-content: space-around; flex: 1"
+ <h1 id="profile-links">Matthew Bratrsovsky</h1>
+ <div
+  style="display: flex; text-align: center; justify-content: space-around; flex: 1"
     id="profile-links__content"
-	>
-		<a target="_blank" href="https://linkedin.com/in/mattkbrat">linkedin.com/in/mattkbrat</a>
-		<a target="_blank" href="mailto:oldlimited@proton.me">oldlimited@proton.me</a>
-		<a target="_blank" href="https://github.com/mattkbrat">github.com/mattkbrat</a>
-		<a target="_blank" href="https://mattkbrat.com">mattkbrat.com</a>
-	</div>
+ >
+  <a target="_blank" href="https://linkedin.com/in/mattkbrat">linkedin.com/in/mattkbrat</a>
+  <a target="_blank" href="mailto:oldlimited@proton.me">oldlimited@proton.me</a>
+  <a target="_blank" href="https://github.com/mattkbrat">github.com/mattkbrat</a>
+  <a target="_blank" href="https://mattkbrat.com">mattkbrat.com</a>
+ </div>
 </section>
 
 ## Summary
 
-I am a **full stack developer** with a passion for collaboration, creativity and colleagues who share similar values. My ideal company is innovative and emphasizes community. I am most practiced in TypeScript, Rust and Postgres and I love learning new technologies.
+I am a **full stack developer** with a passion for collaboration, creativity and
+colleagues who share similar values. My ideal company is innovative and
+emphasizes community. I am most practiced in TypeScript, Rust and Postgres
+and I love learning new technologies.
 
 ---
 
 ## SKILLS
 
-- **BACKEND**: Node.js, Rust, Go, PostgreSQL, SQL, Docker, Linux, NGINX, Python, S3, ElasticSearch, MongoDB
 - **FRONTEND**: Next.JS, React, Svelte, TypeScript, JavaScript, HTML, CSS, Vue
-- **TESTING**: Vitest, Cargo Test, Go Testing
-- **INTERPERSONAL**: Leadership, Data Analysis, Entrepreneurship, Collaboration
+- **BACKEND**: Node.js, Rust, Go, PostgreSQL, SQL, Linux, NGINX, Python, S3, ElasticSearch, MongoDB
+- **DEVOPS**: Docker, Vitest, Cargo Test, Go Testing, Hashicorp Vault
+- **INTERPERSONAL**: Leadership, Data Analysis, Change Management, Entrepreneurship, Collaboration
 
 ## WORK EXPERIENCE
 
@@ -50,8 +53,9 @@ I am a **full stack developer** with a passion for collaboration, creativity and
 </td>
 </table>
 
-- Lead various teams to success by analyzing work patterns and building both deeply connected and disparate tooling.
-- Create web applications, CLI tooling, and various backend architecture.
+- Lead various teams to success by analyzing work patterns and building
+both deeply connected and disparate tooling.
+- Create web applications, CLI tooling, and various other architecture.
 - Collaborate with stakeholders and train end users.
 
 <table id="title-date-table">
@@ -65,14 +69,16 @@ CMB Auto Sales
 </tr>
 <tr>
 <td>
-<i>Software Developer, Contract</i>
+<i>Developer, Contract</i>
 </td>
 </table>
 
-- Wrote a desktop applications in Rust and SQLite to manage customers, inventory, and transactions.
-- Implemented credit application submissions using Google Cloud Platform and Cloudflare R2.
-- Reduced transaction time from 30 to 7 minutes.
-- Increased customer awareness and reduced the percentage of customer debt and bad debts by ~40%.
+- Reduced transaction time from 30 to 7 minutes by understanding the established
+system and incorporating modern updates.
+- Increased customer awareness and reduced the percentage of customer debt
+and bad debts by ~40%.
+- Wrote various applications to manage customers, inventory, and transactions.
+- Implemented credit application submissions through Cloudflare R2 and Vercel.
 
 ## EDUCATION
 
@@ -80,7 +86,7 @@ CMB Auto Sales
 <tr>
 <th><h3>
 <p>
-University of Northern Colorado 
+University of Northern Colorado
 </p>
 </h3></th>
 <td>
@@ -115,48 +121,64 @@ Morgan Community College
 
 ## PROJECTS
 
+### [CMB Auto Sales](https://cmbautosales.com)
+
+- **NextJS**, **Tailwind**, **Cloudflare R2**, **Google Cloud Platform**,
+**S3**, **Vercel**
+- Web presence and platform built for CMB Auto Sales, a local auto dealership.
+- Incorporate vital business operations such as payment processing, credit checking,
+and browsing cars for sale.
+- Facilitate credit checking through a custom-built, security focused
+credit application submission process.
+
 ### Netops Applications
 
-- **Rust**, **Python**, **NodeJS**, **PostgreSQL**, **Redis**, **ElasticSearch**, **IMAP**, **Discourse**, **S3**
-- Delivered several suites of software and web applications to facilitate and improve business operations.
-- Troubleshooted procedural bottlenecks with company leaders and implemented several solutions to increase efficiency.
+- **Rust**, **Python**, **NodeJS**, **PostgreSQL**, **Redis**,
+**ElasticSearch**, **IMAP**, **Discourse**, **S3**
+- Increase company efficiency and efficacy with company leaders by
+troubleshooting procedural bottlenecks and delivering solutions.
+- Facilitate and improve business operations by delivering several
+suites of software and web applications.
 
-### [AutoFLP: Dealer Management System](https://github.com/mattkbrat/autoflp-desktop)
+### [AutoFLP: Dealer Management System](https://github.com/mattkbrat/autoflp-web)
 
-- **RUST**, **CSS**, **HTML**, **JS**, **Cloudflare R2**, **Google Cloud Platform**, **S3**
-- A desktop suite for auto dealerships built with Rust for small, family owned businesses.
-- Features account and inventory management, credit application reviews, and support for billing, payments, and forms.
+- **Svelte**, **Typescript**, **Cloudflare R2**, **Google Cloud Platform**, **S3**
+- Transforms the vitality of small, family owned auto dealerships.
+- Manage accounts and inventory, review credit application, and support billing, payments, and forms.
 
 ### Customer Cell Provisioning
 
 - **SOAP**, **XML**, **ADP**, **NextJS**, **PostgreSQL**, **Redis**
-- Accelerate XML training with an easy-to-use and recognizable web application.
 - Facilitate provisioner interactions with nodes on Viaero's Ericsson network.
+- Accelerate XML training with an easy-to-use and recognizable web application.
 - Permissions-based functionality.
-- Created an XML/SOAP editor and formatter.
+- XML/SOAP editor and formatter.
 
 ### Tower Camera Site
 
 - **Rust**, **RTSP**, **FFmpeg**, **Digest Authentication**, **Nodemailer**, **NextJS**
 - Assist local weather channels with capturing RTSP streams.
-- Administer a public-facing, invite-only site with permission-based routes and encrypted profiles.
-- Allow for editing recorded streams with a suite of abstracted FFmpeg functions and a node-based layout, written in an REST-ful Rust application.
+- Administer a public-facing, invite-only app with permission-based routes and
+encrypted profiles.
+- Allow for editing recorded streams with a suite of abstracted
+FFmpeg functions and a node-based layout, written in an REST-ful Rust application.
 - Communicate with Axis Communication's VAPIX endpoints.
 - Layout and organize camera towers spanning several geographic sectors.
-
-### Fiber Troubleshooting
-
-- **Go**, **NextJS**, **ChartJS**
-- Facilitate individual troubleshooting for 100+ fiber-based, corporate accounts.
-- Ping traces individual and collective hosts, then displays the results in interactable charts.
-- Transformed existing, static information to a dynamic database.
 
 ### [All About Paws Pet Spa LLC.](https://www.fortmorgangrooming.com)
 
 - **AstroJS**, **Tailwind CSS**, **Preact**, **Cloudflare**, **GitHub**
-- Attract clients with images and information and mobile-first layouts.
+- Attract clients with images, well-written information, and mobile-first layouts.
 - Elegantly display an information-dense, static website.
 - Deploy with Cloudflare pages and GitHub.
+
+### Fiber Troubleshooting
+
+- **Go**, **NextJS**, **ChartJS**
+- Facilitate individual troubleshooting for 100+ fiber-based corporate accounts.
+- Ping trace individual and collective hosts, then displays the results in
+interactable charts.
+- Transformed existing, static information to a dynamic database.
 
 ## HOBBIES
 
