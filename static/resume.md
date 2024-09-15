@@ -1,27 +1,41 @@
-export const resume = `
+---
+id: Matthew Bratrsovsky
+aliases:
+  - Resume
+  - K051.100 Matthew Bratrsovsky
+tags:
+  - '#resume'
+  - '#professional'
+date_created: 2022-02-21 14:41
+date_updated: 2024-07-19 15:40
+jd: K051.100
+---
+
 <section class="profile" style="text-align: center">
-	<h1>Matthew Bratrsovsky</h1>
+	<h1 id="profile-links">Matthew Bratrsovsky</h1>
 	<div
-		id="profile-links"
 		style="display: flex; text-align: center; justify-content: space-around; flex: 1"
+    id="profile-links__content"
 	>
 		<a target="_blank" href="https://linkedin.com/in/mattkbrat">linkedin.com/in/mattkbrat</a>
 		<a target="_blank" href="mailto:oldlimited@proton.me">oldlimited@proton.me</a>
 		<a target="_blank" href="https://github.com/mattkbrat">github.com/mattkbrat</a>
+		<a target="_blank" href="https://mattkbrat.com">mattkbrat.com</a>
 	</div>
 </section>
 
 ## Summary
 
-I am a **full stack developer** with a passion for collaboration, creativity and colleagues who share similar values. My ideal company is innovative and emphasizes community. I am most practiced in JavaScript, Rust and Postgres and I love learning new technologies.
+I am a **full stack developer** with a passion for collaboration, creativity and colleagues who share similar values. My ideal company is innovative and emphasizes community. I am most practiced in TypeScript, Rust and Postgres and I love learning new technologies.
 
 ---
 
 ## SKILLS
 
-- **BACKEND**: Node.js, Rust, PostgreSQL, SQL, Docker, Linux, NGINX, Python, Go
+- **BACKEND**: Node.js, Rust, Go, PostgreSQL, SQL, Docker, Linux, NGINX, Python, S3, ElasticSearch, MongoDB
 - **FRONTEND**: Next.JS, React, Svelte, TypeScript, JavaScript, HTML, CSS, Vue
-- **SOFT**: Leadership, Data Analysis, Entrepreneurship, Collaboration
+- **TESTING**: Vitest, Cargo Test, Go Testing
+- **INTERPERSONAL**: Leadership, Data Analysis, Entrepreneurship, Collaboration
 
 ## WORK EXPERIENCE
 
@@ -36,7 +50,8 @@ I am a **full stack developer** with a passion for collaboration, creativity and
 </td>
 </table>
 
-- Create web applications, manage servers and develop backend architecture for a telecommunication company.
+- Lead various teams to success by analyzing work patterns and building both deeply connected and disparate tooling.
+- Create web applications, CLI tooling, and various backend architecture.
 - Collaborate with stakeholders and train end users.
 
 <table id="title-date-table">
@@ -102,7 +117,6 @@ Morgan Community College
 
 ### Netops Applications
 
-
 - **Rust**, **Python**, **NodeJS**, **PostgreSQL**, **Redis**, **ElasticSearch**, **IMAP**, **Discourse**, **S3**
 - Delivered several suites of software and web applications to facilitate and improve business operations.
 - Troubleshooted procedural bottlenecks with company leaders and implemented several solutions to increase efficiency.
@@ -112,13 +126,6 @@ Morgan Community College
 - **RUST**, **CSS**, **HTML**, **JS**, **Cloudflare R2**, **Google Cloud Platform**, **S3**
 - A desktop suite for auto dealerships built with Rust for small, family owned businesses.
 - Features account and inventory management, credit application reviews, and support for billing, payments, and forms.
-
-### [All About Paws Pet Spa LLC.](https://www.fortmorgangrooming.com)
-
-- **AstroJS**, **Tailwind CSS**, **Preact**, **Cloudflare**, **GitHub**
-- Attract clients with images and information and mobile-first layouts.
-- Elegantly display an information-dense, static website.
-- Deploy with Cloudflare pages and GitHub.
 
 ### Customer Cell Provisioning
 
@@ -144,7 +151,13 @@ Morgan Community College
 - Ping traces individual and collective hosts, then displays the results in interactable charts.
 - Transformed existing, static information to a dynamic database.
 
+### [All About Paws Pet Spa LLC.](https://www.fortmorgangrooming.com)
+
+- **AstroJS**, **Tailwind CSS**, **Preact**, **Cloudflare**, **GitHub**
+- Attract clients with images and information and mobile-first layouts.
+- Elegantly display an information-dense, static website.
+- Deploy with Cloudflare pages and GitHub.
+
 ## HOBBIES
 
 Cooking, Personal Knowledge Management, Writing, Self-hosting, Gaming
-`;
