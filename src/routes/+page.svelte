@@ -1,27 +1,22 @@
 <script lang="ts">
-import { onMount } from "svelte";
-
-import ArchivedResume from "$lib/archived-resume.svelte";
-
-import TableOfContents from "$lib/TableOfContents.svelte";
+import { browser } from "$app/environment";
+import { goto, replaceState } from "$app/navigation";
+import { page } from "$app/stores";
 import SvelteMarkdown from "$lib/SvelteMarkdown.svelte";
-
+import TableOfContents from "$lib/TableOfContents.svelte";
 import {
-	headings,
-	position,
 	changePosition,
-	positionManager,
+	headings,
 	minChangeDiff,
+	position,
+	positionManager,
 } from "$lib/stores/content";
+import { onMount } from "svelte";
 
 let resumeContent = "";
 
 let frontmatter = "";
 let hasLoaded: boolean | string = false;
-
-import { page } from "$app/stores";
-import { replaceState } from "$app/navigation";
-import { browser } from "$app/environment";
 
 let visibilities: { id: string; visible: boolean }[] = [];
 
@@ -102,6 +97,7 @@ $: if (resumeContent.length > 0 && $headings.length === 0) {
 		for (const heading of asArray) {
 			onVisible(heading, () => {});
 		}
+
 		headings.set(
 			asArray
 				.map((h) => {
@@ -144,6 +140,7 @@ const styleAnchors = () => {
 $: if (!$page.url.hash && browser) {
 	goto("#profile-links", { replaceState: true });
 }
+
 onMount(() => {
 	console.log(
 		"%cWell, Howdy! : - )",
@@ -153,7 +150,8 @@ onMount(() => {
 		const { hash } = window.location;
 		changePosition(hash.slice(1), $positionManager, true);
 	});
-	fetch("https://raw.githubusercontent.com/mattkbrat/portfolio/main/README.md")
+
+	fetch("/resume.md")
 		.then(async (res) => {
 			const allContent = await res.text();
 
@@ -174,12 +172,12 @@ onMount(() => {
 	/>
 </svelte:head>
 
-<div class="flex">
+<div class="flex tranco">
 	<div class="container h-full mx-auto pt-4 flex justify-center items-center text-lg/6">
 		{#if resumeContent}
 			<div id="resume-content" class="gap-6 space-y-6">
 				<div class="block lg:hidden">
-					<TableOfContents style={'inline'} {headings} {position} />
+					<TableOfContents style={'inline'} />
 				</div>
 				<SvelteMarkdown markdown={resumeContent} id="content" />
 
@@ -187,10 +185,6 @@ onMount(() => {
 					<h2 class="!text-sm underline">Frontmatter</h2>
 					<SvelteMarkdown markdown={frontmatter} id="frontmatter" />
 				</div>
-			</div>
-		{:else}
-			<div id="resume-content" class="flex flex-col gap-4">
-				<ArchivedResume />
 			</div>
 		{/if}
 	</div>
