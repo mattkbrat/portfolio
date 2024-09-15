@@ -60,21 +60,18 @@ both deeply connected and disparate tooling.
 
 <table id="title-date-table">
 <tr>
-<th><h3>
-<a href="https://cmbautosales.com">
-CMB Auto Sales
-</a>
-</h3></th>
+<th><h3>CMB Auto Sales</h3></th>
 <td>May 2019 – Current</td>
 </tr>
 <tr>
 <td>
-<i>Developer, Contract</i>
+<i>Developer (Contract)</i>
 </td>
 </table>
 
 - Reduced transaction time from 30 to 7 minutes by understanding the established
-system and incorporating modern updates.
+system and modernizing the processes.
+- Led change management for updating existing infrastructure.
 - Increased customer awareness and reduced the percentage of customer debt
 and bad debts by ~40%.
 - Wrote various applications to manage customers, inventory, and transactions.
@@ -82,7 +79,7 @@ and bad debts by ~40%.
 
 ## PROJECTS
 
-### [CMB Auto Sales](https://cmbautosales.com)
+### [cmbautosales.com](https://cmbautosales.com)
 
 - **NextJS**, **Tailwind**, **Cloudflare R2**, **Google Cloud Platform**,
 **S3**, **Vercel**
@@ -144,42 +141,10 @@ interactable charts.
 
 ## EDUCATION
 
-<table id="title-date-table">
-<tr>
-<th><h3>
-<p>
-University of Northern Colorado
-</p>
-</h3></th>
-<td>
-2020 – 2022
-</td>
-</tr>
-<tr>
-<td>
-<i>Bachelor of Business Administration, Computer Information Systems</i>
-</td>
-</tr>
-</table>
+#### University of Northern Colorado
 
+*Bachelor of Business Administration, Computer Information Systems*
 - Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
-
-<table id="title-date-table">
-<tr>
-<th><h3>
-<p>
-Morgan Community College
-</p>
-</h3></th>
-<td>
-2018 – 2020
-</td>
-</tr>
-<tr>
-<td>
-<i>Associate of Arts - AA, Accounting and Business/Management</i>
-</td>
-</table>
 
 ## HOBBIES
 
