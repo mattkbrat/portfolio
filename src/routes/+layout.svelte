@@ -1,18 +1,18 @@
 <script lang="ts">
-import "../app.postcss";
+	import '../app.css';
 
-import { isDark, svgStroke as stroke } from "$lib/stores/isDark";
+	import { isDark, svgStroke as stroke } from '$lib/stores/isDark';
 
-const toggleTheme = (toggle = true) => {
-	const htmlElement = document.getElementsByTagName("html")[0];
-	isDark.set(htmlElement.classList.contains("dark"));
-	if (!toggle) return;
-	if ($isDark) {
-		htmlElement.classList.remove("dark");
-	} else {
-		htmlElement.classList.add("dark");
-	}
-};
+	const toggleTheme = (toggle = true) => {
+		const htmlElement = document.getElementsByTagName('html')[0];
+		isDark.set(htmlElement.classList.contains('dark'));
+		if (!toggle) return;
+		if ($isDark) {
+			htmlElement.classList.remove('dark');
+		} else {
+			htmlElement.classList.add('dark');
+		}
+	};
 </script>
 
 <title> Matthew Bratrsovsky </title>

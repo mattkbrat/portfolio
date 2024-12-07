@@ -1,27 +1,18 @@
 ---
 id: Matthew Bratrsovsky
+date_created: 2022-02-21
+date_updated: 2024-12-07 
 aliases:
   - Resume
-  - K051.100 Matthew Bratrsovsky
-tags:
-  - '#resume'
-  - '#professional'
-date_created: 2022-02-21
-date_updated: 2024-09-15
-jd: K051.100
+  - Portfolio
 ---
 
-<section class="profile" style="text-align: center">
- <h1 id="profile-links">Matthew Bratrsovsky</h1>
- <div
-    id="profile-links__content"
- >
-  <a target="_blank" href="https://linkedin.com/in/mattkbrat">linkedin.com/in/mattkbrat</a>
-  <a target="_blank" href="mailto:oldlimited@proton.me">oldlimited@proton.me</a>
-  <a target="_blank" href="https://github.com/mattkbrat">github.com/mattkbrat</a>
-  <a target="_blank" href="https://mattkbrat.com">mattkbrat.com</a>
- </div>
-</section>
+# Matthew Bratrsovsky
+
+- [LinkedIn](https://linkedin.com/in/mattkbrat)
+- [GitHub](https://github.com/mattkbrat)
+- [Email](mailto:oldlimited@proton.me)
+- [Resume](https://mattkbrat.com)
 
 ## Summary
 
@@ -36,7 +27,7 @@ and I love learning new technologies.
 
 - **FRONTEND**: Next.JS, React, Svelte, TypeScript, JavaScript, HTML, CSS, Vue
 - **BACKEND**: Node.js, Rust, Go, PostgreSQL, SQL, Linux, NGINX, Python, S3, ElasticSearch, MongoDB
-- **DEVOPS**: Docker, Vitest, Cargo Test, Go Testing, Hashicorp Vault
+- **DEVOPS**: Docker, Vitest, Playwright, Cargo Test, Hashicorp Vault, Supertokens Auth
 - **INTERPERSONAL**: Leadership, Data Analysis, Change Management, Entrepreneurship, Collaboration
 
 ## WORK EXPERIENCE
@@ -59,7 +50,7 @@ both deeply connected and disparate tooling.
 
 <table id="title-date-table">
 <tr>
-<th><h3>CMB Auto Sales</h3></th>
+<th><h3>Solutions Artisan LTD.</h3></th>
 <td>May 2019 – Current</td>
 </tr>
 <tr>
@@ -68,13 +59,15 @@ both deeply connected and disparate tooling.
 </td>
 </table>
 
-- Reduced transaction time from 30 to 7 minutes by understanding the established
-system and modernizing the processes.
-- Led change management for updating existing infrastructure.
-- Increased customer awareness and reduced the percentage of customer debt
-and bad debts by ~40%.
-- Wrote various applications to manage customers, inventory, and transactions.
-- Implemented credit application submissions through Cloudflare R2 and Vercel.
+- [**CMB Auto Sales**](https://cmbautosales.com)
+  - Increased customer awareness and reduced the percentage of customer debt
+  and bad debts by ~40%.
+  - Reduced transaction time from 30 to 7 minutes by understanding the established
+  system and modernizing the processes.
+  - Led change management for updating existing infrastructure.
+- [**All About Paws Pet Spa, LLC.**](https://www.fortmorgangrooming.com)
+  - Designed an attractive marketing website with a mobile-first focus.
+  - Helped establish and found various business assets.
 
 ## PROJECTS
 
@@ -87,6 +80,17 @@ and bad debts by ~40%.
 and browsing cars for sale.
 - Facilitate credit checking through a custom-built, security focused
 credit application submission process.
+
+### Tower Camera Site
+
+- **Rust**, **RTSP**, **FFmpeg**, **Digest Authentication**, **Nodemailer**, **NextJS**
+- Assist local weather channels with capturing RTSP streams.
+- Administer a public-facing, invite-only app with permission-based routes and
+encrypted profiles.
+- Allow for editing recorded streams with a suite of abstracted
+FFmpeg functions and a node-based layout, written in an REST-ful Rust application.
+- Communicate with VAPIX endpoints for functions including PTZ and temperature control.
+- Layout and organize camera towers spanning several geographic sectors.
 
 ### Netops Applications
 
@@ -112,23 +116,12 @@ payments, and forms.
 - Permissions-based functionality.
 - XML/SOAP editor and formatter.
 
-### Tower Camera Site
-
-- **Rust**, **RTSP**, **FFmpeg**, **Digest Authentication**, **Nodemailer**, **NextJS**
-- Assist local weather channels with capturing RTSP streams.
-- Administer a public-facing, invite-only app with permission-based routes and
-encrypted profiles.
-- Allow for editing recorded streams with a suite of abstracted
-FFmpeg functions and a node-based layout, written in an REST-ful Rust application.
-- Communicate with Axis Communication's VAPIX endpoints.
-- Layout and organize camera towers spanning several geographic sectors.
-
 ### [All About Paws Pet Spa LLC.](https://www.fortmorgangrooming.com)
 
 - **AstroJS**, **Tailwind CSS**, **Preact**, **Cloudflare**, **GitHub**
 - Attract clients with images, well-written information, and mobile-first layouts.
 - Elegantly display an information-dense, static website.
-- Deploy with Cloudflare pages and GitHub.
+- Deployed with Cloudflare pages and GitHub.
 
 ### Fiber Troubleshooting
 
@@ -140,9 +133,9 @@ interactable charts.
 
 ## EDUCATION
 
-#### University of Northern Colorado
+### University of Northern Colorado
 
-*Bachelor of Business Administration, Computer Information Systems*
+- *Bachelor of Business Administration, Computer Information Systems*
 - Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
 
 ## HOBBIES

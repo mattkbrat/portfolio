@@ -90,10 +90,18 @@
 
 			const asArray = Array.from(docHeadings).filter((h) => h.id);
 
-			const profileLinks = document.getElementById('profile-links');
+			const profileLinks = document.getElementById('matthewbratrsovsky')?.closest('div')
+				?.children?.[1];
 
-			if (profileLinks instanceof HTMLHeadingElement) {
-				asArray.unshift(profileLinks);
+			console.log({ profileLinks });
+
+			if (profileLinks) {
+				const previousHeading = profileLinks.previousElementSibling as HTMLHeadElement;
+				previousHeading.id = 'Links';
+				if (previousHeading) {
+					asArray.unshift(previousHeading);
+				}
+				profileLinks.id = 'profile-links';
 			}
 			// asArray.push("profile-links");
 			for (const heading of asArray) {
@@ -119,19 +127,20 @@
 				element?.scrollIntoView();
 				hasLoaded = id;
 			}
+			styleAnchors();
 		}, 150);
 	}
 
-	const styleAnchors = () => {
+	function styleAnchors() {
 		const anchors = Array.from(document.getElementsByTagName('a')) as HTMLAnchorElement[];
-
-		for (const a of anchors.filter(
-			(a) => (a.href.includes('https') || a.href.includes('mailto')) && a.id !== 'github-corner'
-		)) {
+		const filtered = anchors.filter((a) => new URL(a.href).hostname !== 'mattkbrat.com');
+		console.log(filtered);
+		for (const a of filtered) {
+			console.log({ a, class: a.classList });
 			a.classList.add('external-link');
 			a.target = '_blank';
 		}
-	};
+	}
 
 	$: if (!$page.url.hash && browser) {
 		goto('#profile-links', { replaceState: true });
@@ -142,8 +151,6 @@
 
 		frontmatter = properties.trim().split('\n').join('\n\n');
 		resumeContent = rest.join('\n');
-
-		styleAnchors();
 	}
 
 	onMount(() => {

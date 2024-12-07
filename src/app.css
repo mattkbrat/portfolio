@@ -5,14 +5,15 @@
 
 /* modern theme */
 @font-face {
-	font-family: 'Quicksand';
-	src: url('/fonts/Quicksand.ttf');
+	font-family: "Quicksand";
+	src: url("/fonts/Quicksand.ttf");
 	font-display: swap;
 }
+
 /* vintage theme */
 @font-face {
-	font-family: 'Abril Fatface';
-	src: url('/fonts/AbrilFatface.ttf');
+	font-family: "Abril Fatface";
+	src: url("/fonts/AbrilFatface.ttf");
 	font-display: swap;
 }
 
@@ -34,15 +35,15 @@
 	@apply gap-4 flex flex-col;
 }
 
-#profile-links__content {
-	@apply flex flex-col xl:flex-row flex-wrap justify-evenly flex-1 text-center w-full items-center gap-x-2;
+#profile-links {
+	@apply list-none flex flex-col md:flex-row flex-wrap justify-between flex-1 text-center w-full items-center gap-x-2 py-4;
 }
 
-a { 
-	@apply hover:text-primary-400-500-token hover:font-extrabold transition-colors  ;
+a {
+	@apply hover:text-primary-400-500-token hover:font-extrabold transition-colors underline underline-offset-2;
 }
 
-#profile-links__content > a {
+h1 > a {
 	@apply flex-1 min-w-max justify-center;
 }
 
@@ -50,8 +51,8 @@ a {
 	@apply flex lg:inline-flex flex-row items-start self-center lg:self-auto;
 }
 
-.external-link:after {
-	content: '[_↗]';
+.external-link:not(#github-corner):after {
+	content: "[_↗]";
 
 	@apply mx-[2px] text-[8px];
 }
@@ -90,8 +91,8 @@ tr {
 }
 
 @media print {
-	a[href]:not(#profile-links__content > *):after {
-		content: ' (' attr(href) ')';
+	a[href]:not(#profile-links > li > a):after {
+		content: " (" attr(href) ")";
 	}
 
 	#profile-links__content {
@@ -130,7 +131,7 @@ tr {
 	}
 
 	.external-link:after {
-		content: unset;
+		content: unset !important;
 	}
 
 	.selected-heading {
@@ -142,6 +143,6 @@ tr {
 	}
 
 	* {
-		@apply !text-black  !font-serif;
+		@apply !text-black !font-serif;
 	}
 }
