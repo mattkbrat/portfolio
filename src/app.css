@@ -27,7 +27,7 @@
 	@apply w-full text-left content-between;
 }
 
-#title-date-table > tbody > tr:first-child > td {
+#title-date-table>tbody>tr:first-child>td {
 	@apply text-right w-fit;
 }
 
@@ -36,14 +36,14 @@
 }
 
 #profile-links {
-	@apply list-none flex flex-col md:flex-row flex-wrap justify-between flex-1 text-center w-full items-center gap-x-2 py-4;
+	@apply list-none flex flex-wrap justify-between flex-1 text-center w-full items-center gap-x-2 py-4;
 }
 
 a {
 	@apply hover:text-primary-400-500-token hover:font-extrabold transition-colors underline underline-offset-2;
 }
 
-h1 > a {
+h1>a {
 	@apply flex-1 min-w-max justify-center;
 }
 
@@ -82,7 +82,7 @@ ul {
 	@apply list-disc pl-4;
 }
 
-#table-of-contents > ul {
+#table-of-contents>ul {
 	@apply pl-0;
 }
 
