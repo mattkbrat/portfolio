@@ -11,6 +11,7 @@ export default {
 			"../**/*.{html,js,svelte,ts}",
 		),
 	],
+	safelist: ["bg-primary-400-500-token", "bg-tertiary-400-500-token"],
 	theme: {
 		extend: {
 			animation: {
