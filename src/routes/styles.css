@@ -5,7 +5,7 @@
 
 @layer components {
   .selected-heading {
-    @apply text-primary-400-500-token p-2 border-l-2 -ml-2 text-lg;
+    @apply text-primary-400-600 p-2 border-l-2 -ml-2 text-lg;
   }
 
   #title-date-table {

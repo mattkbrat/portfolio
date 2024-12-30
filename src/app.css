@@ -28,7 +28,7 @@
 }
 
 a {
-	@apply hover:text-primary-400-500-token hover:font-extrabold transition-colors underline underline-offset-2;
+	@apply hover:text-primary-400-600 hover:font-extrabold transition-colors underline underline-offset-2;
 }
 
 .external-link:not(#github-corner):after {
@@ -55,7 +55,7 @@ h3 {
 }
 
 strong {
-	@apply text-primary-400-500-token;
+	@apply text-primary-400-600;
 }
 
 ul:not(#profile-links, #main-nav > ul) {

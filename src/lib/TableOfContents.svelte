@@ -1,9 +1,9 @@
 <script lang="ts">
-import Toc from "./icons/TOC.svelte";
-import { headings, position } from "$lib/stores/content";
+	import Toc from './icons/TOC.svelte';
+	import { headings, position } from '$lib/stores/content';
 
-const { style = "inline" }: { style: "sticky" | "inline" } = $props();
-const isInline = $derived(style === "inline");
+	const { style = 'inline' }: { style: 'sticky' | 'inline' } = $props();
+	const isInline = $derived(style === 'inline');
 </script>
 
 <section
@@ -19,7 +19,7 @@ const isInline = $derived(style === "inline");
 				{#each $headings as { heading, href }, i}
 					<a
 						class="flex-1 uppercase px-4 py-2 text-center outline-primary-200 outline-2 flex flex-row gap-2 justify-center"
-						class:text-primary-400-500-token={href === `#${$position}`}
+						class:text-primary-400-600={href === `#${$position}`}
 						{href}
 					>
 						<span class="text-sm">{i + 1})</span>
@@ -28,7 +28,7 @@ const isInline = $derived(style === "inline");
 				{/each}
 			</div>
 
-			<hr class="w-full h-2" />
+			<hr class="w-full h-2 hidden lg:block" />
 		{:else}
 			<ul
 				class:list-dict={isInline}
@@ -39,7 +39,7 @@ const isInline = $derived(style === "inline");
 				{#each $headings as { heading, href }}
 					<li class:ml-0={!isInline} class="dark:hover:text-gray-200 hover:text-gray-800">
 						<a
-							class:text-primary-400-500-token={href === `#${$position}`}
+							class:text-primary-400-600={href === `#${$position}`}
 							{href}
 							data-sveltekit-replacestate
 						>
@@ -50,5 +50,7 @@ const isInline = $derived(style === "inline");
 			</ul>
 		{/if}
 	</div>
-	{$position}
+	<span class="hidden lg:block">
+		{$position}
+	</span>
 </section>

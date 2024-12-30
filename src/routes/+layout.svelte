@@ -1,32 +1,30 @@
 <script lang="ts">
-import "../app.css";
+	import '../app.css';
 
-import { isDark, svgStroke as stroke } from "$lib/stores/isDark";
-import { page } from "$app/stores";
-import { headingIsVisible } from "$lib/stores/content";
+	import { isDark, svgStroke as stroke } from '$lib/stores/isDark';
+	import { page } from '$app/stores';
+	import { headingIsVisible } from '$lib/stores/content';
 
-const { children } = $props();
+	const { children } = $props();
 
-const toggleTheme = (toggle = true) => {
-	const htmlElement = document.getElementsByTagName("html")[0];
-	isDark.set(htmlElement.classList.contains("dark"));
-	if (!toggle) return;
-	if ($isDark) {
-		htmlElement.classList.remove("dark");
-	} else {
-		htmlElement.classList.add("dark");
-	}
-};
+	const toggleTheme = (toggle = true) => {
+		const htmlElement = document.getElementsByTagName('html')[0];
+		isDark.set(htmlElement.classList.contains('dark'));
+		if (!toggle) return;
+		if ($isDark) {
+			htmlElement.classList.remove('dark');
+		} else {
+			htmlElement.classList.add('dark');
+		}
+	};
 
-const pageName = $derived($page.url.pathname);
-const isOnResume = $derived(pageName === "/");
+	const pageName = $derived($page.url.pathname);
+	const isOnResume = $derived(pageName === '/');
 </script>
 
 <title> Matthew Bratrsovsky </title>
 
-<section
-	class="z-50 md:sticky top-0 bg-surface-50-900-token border-b-2 border-white flex print:hidden"
->
+<section class="z-50 md:sticky top-0 bg-surface-50-950 border-b-2 border-white flex print:hidden">
 	<nav id="main-nav" class="md:h-[var(--h-header)]">
 		<ul class="!list-none flex gap-x-4 py-4 text-lg mx-8 flex-wrap gap-y-2">
 			<li>
@@ -37,7 +35,7 @@ const isOnResume = $derived(pageName === "/");
 					Games
 				</a>
 			</li>
-			<li class="text-primary-600-300-token">
+			<li class="text-primary-600-300">
 				<a
 					class:md:opacity-0={$headingIsVisible}
 					class="transition-all duration-300 no-underline hover:!underline border-l-current border-l-2 px-2"
@@ -49,7 +47,7 @@ const isOnResume = $derived(pageName === "/");
 		</ul>
 	</nav>
 	<button
-		class="btn rounded-none flex flex-row-reverse lg:flex-row gap-2 ml-auto"
+		class="btn rounded-none flex flex-row-reverse lg:flex-row gap-2 ml-auto mt-auto"
 		onclick={() => toggleTheme()}
 		type="button"
 	>
@@ -92,7 +90,7 @@ const isOnResume = $derived(pageName === "/");
 <div class="flex flex-col items-center justify-center">
 	{#if isOnResume}
 		<div
-			class="lg:btn-group-vertical flex-wrap btn-group justify-around lg:fixed top-16 right-0 items-end ml-auto print:hidden"
+			class="lg:flex-col mx-auto lg:mx-0 flex-wrap btn-group justify-around lg:fixed top-16 right-0 items-end ml-auto print:hidden"
 		>
 			<a
 				class="flex flex-row-reverse lg:flex-row gap-2"
@@ -185,7 +183,7 @@ const isOnResume = $derived(pageName === "/");
 		</div>
 	{/if}
 	<div
-		class="outline outline-1 print:outline-transparent bg-white/75 dark:bg-black/75 -outline-offset-4 outline-primary-300-600-token m-2 p-4 lg:mx-64 lg:my-8 lg:p-8 print:!mx-8"
+		class="outline outline-1 print:outline-transparent bg-white/75 dark:bg-black/75 -outline-offset-4 outline-primary-300-900 m-2 p-4 lg:mx-64 lg:my-8 lg:p-8 print:!mx-8"
 	>
 		<div class="self-center max-w-[75ch] print:max-w-max break-word flex flex-col">
 			{@render children()}
@@ -196,7 +194,7 @@ const isOnResume = $derived(pageName === "/");
 	<label class="sr-only" for="github-corner"> Github </label>
 	<a id="github-corner" target="_blank" href="https://github.com/mattkbrat/portfolio">
 		<div
-			class="fixed bottom-0 left-0 w-[200px] h-[200px] bg-black/5 -ml-[150px] -mb-[100px] border-t-2 border-surface-200-700-token cursor-pointer rotate-45 text-[0px] bg-surface-50-900-token"
+			class="fixed bottom-0 left-0 w-[200px] h-[200px] bg-black/5 -ml-[150px] -mb-[100px] border-t-2 border-surface-200-800 cursor-pointer rotate-45 text-[0px] bg-surface-50-950"
 		>
 			Github
 		</div>
