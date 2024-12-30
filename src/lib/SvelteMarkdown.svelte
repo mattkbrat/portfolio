@@ -1,11 +1,11 @@
 <script lang="ts">
-import { onMount } from "svelte";
-
+import { browser } from "$app/environment";
 import showdown from "showdown";
-export let markdown = "";
-export let id = "";
+import { onMount } from "svelte";
+const { markdown = "", id = "" } = $props();
 
 onMount(() => {
+	if (!browser) return;
 	const converter = new showdown.Converter();
 	const html = converter.makeHtml(markdown);
 	const div = document.getElementById(id);

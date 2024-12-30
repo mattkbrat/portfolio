@@ -30,3 +30,7 @@ export const changePosition = (
 	}
 	positionManager.set({ lastChanged: now, position: id });
 };
+
+export const documentData = writable("");
+
+export const headingIsVisible = writable(false);

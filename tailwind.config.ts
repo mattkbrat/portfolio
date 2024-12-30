@@ -1,16 +1,18 @@
 import { join } from "path";
 import type { Config } from "tailwindcss";
-import { skeleton } from "@skeletonlabs/tw-plugin";
+import { skeleton } from "@skeletonlabs/skeleton/plugin";
+import { vintage } from "@skeletonlabs/skeleton/themes";
 
 export default {
 	darkMode: "class",
 	content: [
 		"./src/**/*.{html,js,svelte,ts}",
 		join(
-			require.resolve("@skeletonlabs/skeleton"),
+			require.resolve("@skeletonlabs/skeleton-svelte"),
 			"../**/*.{html,js,svelte,ts}",
 		),
 	],
+	safelist: ["bg-success-400-600", "bg-error-400-600"],
 	theme: {
 		extend: {
 			animation: {
@@ -20,14 +22,7 @@ export default {
 	},
 	plugins: [
 		skeleton({
-			themes: {
-				preset: [
-					{
-						name: "vintage",
-						enhancements: true,
-					},
-				],
-			},
+			themes: [vintage],
 		}),
 	],
 } satisfies Config;

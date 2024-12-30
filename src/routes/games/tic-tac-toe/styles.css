@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .obscure {
+    @apply bg-surface-900/40 h-full w-full text-white;
+  }
+
+  #game-board {
+    container-name: board;
+    container-type: inline-size;
+  }
+
+  #reset-button {
+    font-size: large;
+  }
+
+  @container board (min-width: 30rem) {
+    #reset-button {
+      font-size: 10dvw;
+    }
+  }
+}
