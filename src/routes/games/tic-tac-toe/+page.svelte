@@ -271,7 +271,7 @@
 	</section>
 {:else}
 	<div
-		class={'grid items-center max-h-screen aspect-square mx-auto relative'}
+		class={'grid items-center max-h-screen aspect-square mx-auto relative margin-top-nav'}
 		id={'game-board'}
 		bind:this={boardRef}
 	>

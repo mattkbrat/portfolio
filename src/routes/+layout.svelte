@@ -47,7 +47,9 @@
 		</ul>
 	</nav>
 	<button
-		class="btn rounded-none flex flex-row-reverse lg:flex-row gap-2 ml-auto mt-auto"
+		class="btn rounded-none flex flex-row-reverse lg:flex-row gap-2 ml-auto"
+		class:mt-auto={isOnResume}
+		class:my-auto={!isOnResume}
 		onclick={() => toggleTheme()}
 		type="button"
 	>

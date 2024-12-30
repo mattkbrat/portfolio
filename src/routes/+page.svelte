@@ -146,7 +146,7 @@
 		const anchors = Array.from(document.getElementsByTagName('a')) as HTMLAnchorElement[];
 		const filtered = anchors.filter((a) => {
 			const { hostname } = new URL(a.href);
-			return hostname !== 'mattkbrat.com' && !hostname.includes('localhost');
+			return !hostname.includes('mattkbrat.com') && !hostname.includes('localhost');
 		});
 		for (const a of filtered) {
 			a.classList.add('external-link');
