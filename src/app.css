@@ -17,38 +17,18 @@
 	font-display: swap;
 }
 
-@layer utilities {
-	.selected-heading {
-		@apply text-primary-400-500-token p-2 border-l-2 -ml-2;
+:root {
+	--h-header: 4rem;
+}
+
+@layer components {
+	.external-link {
+		@apply flex lg:inline-flex flex-row items-start self-center lg:self-auto;
 	}
-}
-
-#title-date-table {
-	@apply w-full text-left content-between;
-}
-
-#title-date-table>tbody>tr:first-child>td {
-	@apply text-right w-fit;
-}
-
-.profile {
-	@apply gap-4 flex flex-col;
-}
-
-#profile-links {
-	@apply list-none flex flex-wrap justify-between flex-1 text-center w-full items-center gap-x-2 py-4;
 }
 
 a {
 	@apply hover:text-primary-400-500-token hover:font-extrabold transition-colors underline underline-offset-2;
-}
-
-h1>a {
-	@apply flex-1 min-w-max justify-center;
-}
-
-.external-link {
-	@apply flex lg:inline-flex flex-row items-start self-center lg:self-auto;
 }
 
 .external-link:not(#github-corner):after {
@@ -59,15 +39,15 @@ h1>a {
 
 a,
 h3 {
-	@apply text-xl pt-2;
+	@apply !text-xl pt-2;
 }
 
 h1 {
-	@apply text-4xl underline;
+	@apply !text-4xl underline;
 }
 
 h2 {
-	@apply text-3xl my-2;
+	@apply !text-2xl !mt-2;
 }
 
 h3 {
@@ -78,33 +58,22 @@ strong {
 	@apply text-primary-400-500-token;
 }
 
-ul {
-	@apply list-disc pl-4;
-}
-
-#table-of-contents>ul {
-	@apply pl-0;
+ul:not(#profile-links, #main-nav > ul) {
+	@apply !list-disc pl-4;
 }
 
 tr {
 	@apply flex flex-row justify-between;
 }
 
+.margin-top-nav {
+	/* scroll-margin-top: 1rem; */
+	@apply md:scroll-mt-[calc(var(--h-header)+0.4rem)];
+}
+
 @media print {
-	a[href]:not(#profile-links > li > a):after {
-		content: " (" attr(href) ")";
-	}
-
-	#profile-links__content {
-		@apply !flex-row;
-	}
-
 	button {
 		@apply print:hidden;
-	}
-
-	html {
-		@apply text-[14px];
 	}
 
 	div,

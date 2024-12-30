@@ -2,12 +2,14 @@
 import Toc from "./icons/TOC.svelte";
 import { headings, position } from "$lib/stores/content";
 
-export let style: "sticky" | "inline" = "inline";
-
-$: isInline = style === "inline";
+const { style = "inline" }: { style: "sticky" | "inline" } = $props();
+const isInline = $derived(style === "inline");
 </script>
 
-<section id="table-of-contents" class="print:hidden group flex flex-col">
+<section
+	id="table-of-contents"
+	class="print:hidden group flex gap-x-2 items-center hover:items-start hover:flex-col"
+>
 	<div class={isInline ? 'hidden' : 'group-hover:opacity-25 transition-opacity'}>
 		<Toc />
 	</div>
@@ -48,6 +50,5 @@ $: isInline = style === "inline";
 			</ul>
 		{/if}
 	</div>
+	{$position}
 </section>
-
-<span class:hidden={isInline} class="dark:text-gray-200">{$position}</span>

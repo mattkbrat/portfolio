@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer components {
+  .selected-heading {
+    @apply text-primary-400-500-token p-2 border-l-2 -ml-2 text-lg;
+  }
+
+  #title-date-table {
+    @apply w-full text-left content-between;
+  }
+
+  #title-date-table>tbody>tr:first-child>td {
+    @apply text-right w-fit;
+  }
+
+  .profile {
+    @apply gap-4 flex flex-col;
+  }
+
+  #profile-links {
+    @apply list-none flex flex-wrap justify-between flex-1 text-center w-full items-center gap-x-2 py-4;
+  }
+
+  h1>a {
+    @apply flex-1 min-w-max justify-center;
+  }
+}
+
+tr {
+  @apply flex flex-row justify-between;
+}
+
+.margin-top-nav {
+  /* scroll-margin-top: 1rem; */
+  @apply md:scroll-mt-[calc(var(--h-header)+0.4rem)];
+}
+
+#main-nav {
+  @apply md:h-[var(--h-header)];
+}
+
+@media print {
+  a[href]:not(#profile-links > li > a):after {
+    content: " (" attr(href) ")";
+  }
+
+  button {
+    @apply print:hidden;
+  }
+
+  div,
+  section,
+  body {
+    @apply !bg-transparent !bg-none;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-top: solid 1px black;
+  }
+
+  .external-link {
+    @apply inline flex-row items-start;
+  }
+
+  .external-link:after {
+    content: unset !important;
+  }
+
+  .selected-heading {
+    @apply border-l-0 -ml-0;
+  }
+
+  #resume-content {
+    @apply !gap-1 !space-y-2;
+  }
+
+  * {
+    @apply !text-black !font-serif;
+  }
+}
