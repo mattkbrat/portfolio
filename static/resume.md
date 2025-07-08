@@ -16,10 +16,7 @@ aliases:
 
 ## Summary
 
-I am a **full stack developer** with a passion for collaboration, creativity and
-colleagues who share similar values. My ideal company is innovative and
-emphasizes community. I am most practiced in TypeScript, Rust and Postgres
-and I love learning new technologies.
+Dynamic full stack developer dedicated to collaboration, creativity, and working alongside like-minded professionals. Committed to innovation and community-driven solutions. Proficient in TypeScript, Rust, and Postgres, with a strong enthusiasm for exploring new technologies.
 
 ---
 
