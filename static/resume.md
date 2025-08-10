@@ -23,7 +23,7 @@ Dynamic full stack developer dedicated to collaboration, creativity, and working
 ## SKILLS
 
 - **FRONTEND**: Next.JS, React, Svelte, TypeScript, JavaScript, HTML, CSS, Vue
-- **BACKEND**: Node.js, Rust, Go, PostgreSQL, SQL, Linux, NGINX, Python, S3, ElasticSearch, MongoDB
+- **BACKEND**: Bun, Node.js, Rust, Go, PostgreSQL, SQLite, SQL, Linux, NGINX, Python, S3, ElasticSearch, MongoDB
 - **DEVOPS**: Docker, Vitest, Playwright, Cargo Test, Hashicorp Vault, Supertokens Auth
 - **INTERPERSONAL**: Leadership, Data Analysis, Change Management, Entrepreneurship, Collaboration
 
@@ -57,61 +57,48 @@ both deeply connected and disparate tooling.
 </table>
 
 - [**CMB Auto Sales**](https://cmbautosales.com)
-  - Increased customer awareness and reduced the percentage of customer debt
-  and bad debts by ~40%.
-  - Reduced transaction time from 30 to 7 minutes by understanding the established
-  system and modernizing the processes.
-  - Led change management for updating existing infrastructure.
+  - Cut customer debt and bad debt by **~40%** by surfacing real-time payment data and overdue alerts in the DMS.
+  - Shrank average transaction time from 30 min to 7 min by automating manual data entry.
+  - Migrated a legacy on-prem desktop application to a cloud-hosted solution with minmal downtime.
 - [**All About Paws Pet Spa, LLC.**](https://www.fortmorgangrooming.com)
   - Designed an attractive marketing website with a mobile-first focus.
   - Helped establish and found various business assets.
 
 ## PROJECTS
 
-### [cmbautosales.com](https://cmbautosales.com)
+### [Tower Camera Site](https://cameras.viaero.com)
 
-- **NextJS**, **Tailwind**, **Cloudflare R2**, **Google Cloud Platform**,
-**S3**, **Vercel**
-- Web presence and platform built for CMB Auto Sales, a local auto dealership.
-- Incorporate vital business operations such as payment processing, credit checking,
-and browsing cars for sale.
-- Facilitate credit checking through a custom-built, security focused
-credit application submission process.
-
-### Tower Camera Site
-
-- **Rust**, **RTSP**, **FFmpeg**, **Digest Authentication**, **Nodemailer**, **NextJS**
-- Assist local weather channels with capturing RTSP streams.
+- Provide multiple local weather channels with tools to capture RTSP streams.
 - Administer a public-facing, invite-only app with permission-based routes and
 encrypted profiles.
-- Allow for editing recorded streams with a suite of abstracted
-FFmpeg functions and a node-based layout, written in an REST-ful Rust application.
+- Allow for captuing and editing streams and videos through a backend server built with
+Bun and FFmpeg.
 - Communicate with VAPIX endpoints for functions including PTZ and temperature control.
-- Layout and organize camera towers spanning several geographic sectors.
+- Layout and organize **100+** camera towers spanning several geographic sectors.
 
 ### Netops Applications
 
-- **Rust**, **Python**, **NodeJS**, **PostgreSQL**, **Redis**,
-**ElasticSearch**, **IMAP**, **Discourse**, **S3**
-- Increase company efficiency and efficacy with company leaders by
-troubleshooting procedural bottlenecks and delivering solutions.
-- Facilitate and improve business operations by delivering several
-suites of software and web applications.
+- Develop and deploy solutions to self-hosted servers, in collaboration with company leaders,
+for boosted efficiency. 
+- Troubleshoot procedural bottlenecks and deliver solutions.
 
 ### [AutoFLP: Dealer Management System](https://github.com/mattkbrat/autoflp-web)
 
-- **Svelte**, **Typescript**, **Cloudflare R2**, **Google Cloud Platform**, **S3**
 - Transforms the vitality of small, family owned auto dealerships.
+- Integrated Cloudflare Cloudflare R2 S3 and GCP for PDF document management.
 - Manage accounts and inventory, review credit application, and support billing,
 payments, and forms.
 
 ### Customer Cell Provisioning
 
-- **SOAP**, **XML**, **ADP**, **NextJS**, **PostgreSQL**, **Redis**
-- Facilitate provisioner interactions with nodes on Viaero's Ericsson network.
-- Accelerate XML training with an easy-to-use and recognizable web application.
-- Permissions-based functionality.
-- XML/SOAP editor and formatter.
+- Facilitate provisioner interactions with nodes from multiple providers on on Viaero's network.
+- Developed a provisioning platform built on NextJS that serves over **100,000** customers.
+- Streamlined account management for customer service teams by translating user actions into XML requests.
+
+### [cmbautosales.com](https://cmbautosales.com)
+
+- Provide customers with information on CMB Auto Sales, a local auto dealership.
+- Built a custom customer-focused credit application web form with a focus on security.
 
 ### [All About Paws Pet Spa LLC.](https://www.fortmorgangrooming.com)
 
