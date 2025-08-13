@@ -1,25 +1,25 @@
 <script lang="ts">
-	import '../app.css';
+import { page } from "$app/state";
+import { headingIsVisible } from "$lib/features/portfolio";
+import { isDark } from "$lib/isDark";
+import { svgStroke as stroke } from "$lib/isDark";
+import "../app.css";
 
-	import { isDark, svgStroke as stroke } from '$lib/stores/isDark';
-	import { page } from '$app/stores';
-	import { headingIsVisible } from '$lib/stores/content';
+const { children } = $props();
 
-	const { children } = $props();
+const toggleTheme = (toggle = true) => {
+	const htmlElement = document.getElementsByTagName("html")[0];
+	isDark.set(htmlElement.classList.contains("dark"));
+	if (!toggle) return;
+	if ($isDark) {
+		htmlElement.classList.remove("dark");
+	} else {
+		htmlElement.classList.add("dark");
+	}
+};
 
-	const toggleTheme = (toggle = true) => {
-		const htmlElement = document.getElementsByTagName('html')[0];
-		isDark.set(htmlElement.classList.contains('dark'));
-		if (!toggle) return;
-		if ($isDark) {
-			htmlElement.classList.remove('dark');
-		} else {
-			htmlElement.classList.add('dark');
-		}
-	};
-
-	const pageName = $derived($page.url.pathname);
-	const isOnResume = $derived(pageName === '/');
+const pageName = $derived(page.url.pathname);
+const isOnResume = $derived(pageName === "/");
 </script>
 
 <title> Matthew Bratrsovsky </title>

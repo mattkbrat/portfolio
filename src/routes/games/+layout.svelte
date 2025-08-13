@@ -1,6 +1,6 @@
 <script>
 import Tabs from "$lib/components/tabs/Tabs.svelte";
-import { headingIsVisible } from "$lib/stores/content";
+import { headingIsVisible } from "$lib/features/portfolio";
 import { onMount } from "svelte";
 
 const { children } = $props();

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Toc from './icons/TOC.svelte';
-	import { headings, position } from '$lib/stores/content';
+import Toc from "$lib/icons/TOC.svelte";
+import { headings, position } from "./stores/content";
 
-	const { style = 'inline' }: { style: 'sticky' | 'inline' } = $props();
-	const isInline = $derived(style === 'inline');
+const { style = "inline" }: { style: "sticky" | "inline" } = $props();
+const isInline = $derived(style === "inline");
 </script>
 
 <section

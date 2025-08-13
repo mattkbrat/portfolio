@@ -1,5 +1,5 @@
 <script>
-import { svgStroke as stroke } from "$lib/stores/isDark";
+import { svgStroke as stroke } from "$lib/isDark";
 </script>
 
 <svg
