@@ -47,9 +47,7 @@ const isOnResume = $derived(pageName === "/");
 		</ul>
 	</nav>
 	<button
-		class="btn rounded-none flex flex-row-reverse lg:flex-row gap-2 ml-auto"
-		class:mt-auto={isOnResume}
-		class:my-auto={!isOnResume}
+		class="btn rounded-none flex flex-row-reverse lg:flex-row gap-2 ml-auto my-auto"
 		onclick={() => toggleTheme()}
 		type="button"
 	>
@@ -187,7 +185,7 @@ const isOnResume = $derived(pageName === "/");
 	<div
 		class="outline outline-1 print:outline-transparent bg-white/75 dark:bg-black/75 -outline-offset-4 outline-primary-300-900 m-2 p-4 lg:mx-64 lg:my-8 lg:p-8 print:!mx-8"
 	>
-		<div class="self-center max-w-[75ch] print:max-w-max break-word flex flex-col">
+		<div class="self-center max-w-[75ch] xl:max-w-[120ch] print:max-w-max break-word flex flex-col">
 			{@render children()}
 		</div>
 	</div>

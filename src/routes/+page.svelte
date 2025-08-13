@@ -177,7 +177,13 @@ onMount(() => {
 
 				<div class="outline outline-2 outline-offset-2 px-4 text-sm print:hidden">
 					<h2 class="!text-sm underline">Frontmatter</h2>
-					<SvelteMarkdown markdown={frontmatter} id="frontmatter" />
+					<ul>
+						{#each frontmatter.split('\n') as line}
+							<li>
+								{line}
+							</li>
+						{/each}
+					</ul>
 				</div>
 			</div>
 		{/if}
