@@ -4,7 +4,6 @@
 @import '@skeletonlabs/skeleton/themes/cerberus';
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
-@custom-variant dark (&:where(.dark, .dark *));
 /*@tailwind variants;*/
 
 /* modern theme */
