@@ -1,19 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
+@import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/cerberus';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+/*@tailwind variants;*/
 
 /* modern theme */
 @font-face {
-	font-family: "Quicksand";
-	src: url("/fonts/Quicksand.ttf");
+	font-family: 'Quicksand';
+	src: url('/fonts/Quicksand.ttf');
 	font-display: swap;
 }
 
 /* vintage theme */
 @font-face {
-	font-family: "Abril Fatface";
-	src: url("/fonts/AbrilFatface.ttf");
+	font-family: 'Abril Fatface';
+	src: url('/fonts/AbrilFatface.ttf');
 	font-display: swap;
 }
 
@@ -21,97 +24,140 @@
 	--h-header: 4rem;
 }
 
-@layer components {
-	.external-link {
-		@apply flex lg:inline-flex flex-row items-start self-center lg:self-auto;
-	}
-}
-
-a {
-	@apply hover:text-primary-400-600 hover:font-extrabold transition-colors underline underline-offset-2;
-}
-
-.external-link:not(#github-corner):after {
-	content: "[_↗]";
-
-	@apply mx-[2px] text-[8px];
-}
-
-a,
 h3 {
-	@apply !text-xl pt-2;
+	text-decoration: underline;
+	font-weight: bold !important;
 }
 
-h1 {
-	@apply !text-4xl underline;
-}
-
-h2 {
-	@apply !text-2xl !mt-2;
-}
-
-h3 {
-	@apply underline;
-}
-
-strong {
-	@apply text-primary-400-600;
-}
-
-ul:not(#profile-links, #main-nav > ul) {
-	@apply !list-disc pl-4;
-}
-
-tr {
-	@apply flex flex-row justify-between;
-}
-
-.margin-top-nav {
-	/* scroll-margin-top: 1rem; */
-	@apply md:scroll-mt-[calc(var(--h-header)+0.4rem)];
-}
-
-@media print {
-	button {
-		@apply print:hidden;
+@layer base {
+	html {
+		@apply text-[14px] lg:text-[20px];
 	}
 
-	div,
-	section,
 	body {
-		@apply !bg-transparent !bg-none;
+		background-image: radial-gradient(
+			circle farthest-corner at -24.7% -47.3%,
+			rgba(6, 130, 165, 0.3) 0%,
+			rgba(34, 48, 86, 0.3) 66.8%,
+			rgba(15, 23, 42, 0.3) 100.2%
+		);
+		@variant dark {
+			background-image: radial-gradient(
+				circle farthest-corner at -24.7% -47.3%,
+				rgba(6, 130, 165, 1) 0%,
+				rgba(34, 48, 86, 1) 66.8%,
+				rgba(15, 23, 42, 1) 100.2%
+			);
+		}
+	}
+
+	svg {
+		stroke: black;
+		@variant dark {
+			stroke: white;
+		}
+	}
+
+	a {
+		@apply underline underline-offset-2 transition-colors;
+	}
+
+	a:hover {
+		font-weight: bolder;
+		color: light-dark(var(--color-primary-400), var(--color-primary-400));
+	}
+
+	a,
+	h3 {
+		@apply pt-2 !text-xl;
+	}
+
+	h1 {
+		@apply !text-4xl underline;
 	}
 
 	h2 {
-		@apply text-2xl;
+		@apply !mt-2 !text-2xl;
+		@apply uppercase;
 	}
 
-	hr {
-		display: block;
-		height: 1px;
-		background: transparent;
-		width: 100%;
-		border: none;
-		border-top: solid 1px black;
+	strong {
+		color: light-dark(var(--color-primary-600), var(--color-primary-400));
 	}
 
+	ul:not(#profile-links, #main-nav > ul) {
+		@apply !list-disc pl-4;
+	}
+
+	tr {
+		@apply flex flex-row justify-between;
+	}
+
+	@media print {
+		button {
+			@apply print:hidden;
+		}
+
+		div,
+		section,
+		body {
+			@apply !bg-transparent !bg-none;
+		}
+
+		h2 {
+			@apply text-2xl;
+		}
+
+		hr {
+			display: block;
+			height: 1px;
+			background: transparent;
+			width: 100%;
+			border: none;
+			border-top: solid 1px black;
+		}
+
+		a {
+			@apply underline underline-offset-2;
+		}
+
+		#resume-content {
+			@apply !gap-1 !space-y-2;
+		}
+
+		* {
+			@apply !font-serif !text-black;
+		}
+	}
+}
+
+@layer components {
 	.external-link {
-		@apply inline flex-row items-start;
+		@apply flex flex-row items-start self-center lg:inline-flex lg:self-auto;
 	}
 
-	.external-link:after {
-		content: unset !important;
+	.external-link:not(#github-corner):after {
+		content: '[_↗]';
+
+		@apply mx-[2px] text-[8px];
 	}
 
-	.selected-heading {
-		@apply border-l-0 -ml-0;
+	.margin-top-nav {
+		/* scroll-margin-top: 1rem; */
+		@apply md:scroll-mt-[calc(var(--h-header)+0.4rem)];
 	}
 
-	#resume-content {
-		@apply !gap-1 !space-y-2;
-	}
+	@media print {
+		.external-link {
+			@apply inline flex-row items-start;
+		}
 
-	* {
-		@apply !text-black !font-serif;
+		.external-link:after {
+			content: unset !important;
+		}
+
+		.selected-heading {
+			@apply -ml-0 border-l-0;
+		}
 	}
 }

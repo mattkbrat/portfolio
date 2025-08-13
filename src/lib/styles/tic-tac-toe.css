@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+@layer components {
+	.obscure {
+		@apply h-full w-full text-white;
+		background-color: var(--color-surface-900);
+	}
+
+	#game-board {
+		container-name: board;
+		container-type: inline-size;
+	}
+
+	#reset-button {
+		font-size: large;
+	}
+
+	@container board (min-width: 30rem) {
+		#reset-button {
+			font-size: 10dvw;
+		}
+	}
+}
