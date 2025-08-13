@@ -20,6 +20,10 @@
 :root {
 	--h-header: 4rem;
 }
+h3 {
+	text-decoration: underline;
+	font-weight: bold !important;
+}
 
 @layer base {
 	html {
@@ -42,10 +46,6 @@
 	h2 {
 		@apply !text-2xl !mt-2;
 		@apply uppercase;
-	}
-
-	h3 {
-		@apply underline;
 	}
 
 	strong {
