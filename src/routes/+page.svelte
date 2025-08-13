@@ -165,17 +165,14 @@ onMount(() => {
 
 <div class="flex" id="resume-body">
 	<div
-		class="container h-full mx-auto pt-4 flex justify-center items-center text-lg/6"
+		class="container mx-auto flex h-full items-center justify-center pt-4 text-lg/6"
 		id="content-container"
 	>
 		{#if resumeContent}
 			<div id="resume-content" class="gap-6 space-y-6">
-				<div class="block lg:hidden">
-					<TableOfContents style={'inline'} />
-				</div>
 				<SvelteMarkdown markdown={`${summary}\n${resumeContent}`} id="content" />
 
-				<div class="outline outline-2 outline-offset-2 px-4 text-sm print:hidden">
+				<div class="px-4 text-sm outline-2 outline-offset-2 print:hidden">
 					<h2 class="!text-sm underline">Frontmatter</h2>
 					<ul>
 						{#each frontmatter.split('\n') as line}
@@ -188,7 +185,7 @@ onMount(() => {
 			</div>
 		{/if}
 	</div>
-	<div class="hidden lg:block fixed left-32">
-		<TableOfContents style="sticky" />
+	<div class="fixed left-32 hidden lg:block">
+		<TableOfContents />
 	</div>
 </div>

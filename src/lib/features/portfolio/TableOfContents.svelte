@@ -1,54 +1,31 @@
 <script lang="ts">
 import Toc from "$lib/icons/TOC.svelte";
 import { headings, position } from "./stores/content";
-
-const { style = "inline" }: { style: "sticky" | "inline" } = $props();
-const isInline = $derived(style === "inline");
 </script>
 
 <section
 	id="table-of-contents"
-	class="print:hidden group flex gap-x-2 items-center hover:items-start hover:flex-col"
+	class="group hidden items-center gap-x-2 hover:flex-col hover:items-start xl:flex print:hidden"
 >
-	<div class={isInline ? 'hidden' : 'group-hover:opacity-25 transition-opacity'}>
+	<div class={'transition-opacity group-hover:opacity-25'}>
 		<Toc />
 	</div>
-	<div class={isInline ? 'contents' : 'hidden group-hover:contents'}>
-		{#if isInline}
-			<div class="flex flex-row flex-wrap items-center">
-				{#each $headings as { heading, href }, i}
+	<div class="hidden group-hover:contents">
+		<ul class="list-disc bg-gray-200/75 uppercase dark:bg-gray-900/75">
+			{#each $headings as { heading, href }}
+				{@const isCurrent = href === `#${$position}`}
+				<li class="hover:text-gray-800 dark:hover:text-gray-200">
 					<a
-						class="flex-1 uppercase px-4 py-2 text-center outline-primary-200 outline-2 flex flex-row gap-2 justify-center"
-						class:text-primary-400-600={href === `#${$position}`}
+						class:!text-primary-600={isCurrent}
+						class:!dark:text-primary-400={isCurrent}
 						{href}
+						data-sveltekit-replacestate
 					>
-						<span class="text-sm">{i + 1})</span>
 						{heading}
 					</a>
-				{/each}
-			</div>
-
-			<hr class="w-full h-2 hidden lg:block" />
-		{:else}
-			<ul
-				class:list-dict={isInline}
-				class:list-none={!isInline}
-				class:uppercase={!isInline}
-				class="bg-gray-200/75 dark:bg-gray-900/75"
-			>
-				{#each $headings as { heading, href }}
-					<li class:ml-0={!isInline} class="dark:hover:text-gray-200 hover:text-gray-800">
-						<a
-							class:text-primary-400-600={href === `#${$position}`}
-							{href}
-							data-sveltekit-replacestate
-						>
-							{heading}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		{/if}
+				</li>
+			{/each}
+		</ul>
 	</div>
 	<span class="hidden lg:block">
 		{$position}
