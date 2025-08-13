@@ -1,6 +1,8 @@
 <script lang="ts">
 import { page } from "$app/state";
 import { headingIsVisible } from "$lib/features/portfolio";
+import TableOfContents from "$lib/features/portfolio/TableOfContents.svelte";
+import Toc from "$lib/icons/TOC.svelte";
 import "../app.css";
 
 const { children } = $props();
@@ -23,8 +25,8 @@ const isOnResume = $derived(pageName === "/");
 <section
 	class="top-0 z-50 flex border-b-2 border-white bg-gray-50 md:sticky dark:!bg-gray-950 print:hidden"
 >
-	<nav id="main-nav" class="md:h-[var(--h-header)]">
-		<ul class="mx-8 flex !list-none flex-wrap gap-x-4 gap-y-2 py-4 text-lg">
+	<nav id="main-nav" class="flex flex-1 md:h-[var(--h-header)]">
+		<ul class="mx-8 flex w-full !list-none flex-wrap gap-x-4 gap-y-2 py-4 text-lg">
 			<li>
 				<a href="/" class:!underline={isOnResume} class="no-underline" id="main-anchor"> Resume </a>
 			</li>
@@ -43,6 +45,9 @@ const isOnResume = $derived(pageName === "/");
 				</a>
 			</li>
 		</ul>
+		{#if isOnResume}
+			<TableOfContents />
+		{/if}
 	</nav>
 </section>
 <div class="flex flex-col-reverse items-center justify-center lg:flex-col">

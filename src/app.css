@@ -51,7 +51,7 @@ h3 {
 		}
 	}
 
-	svg {
+	svg:not(.fill-opposite) {
 		stroke: black;
 		@variant dark {
 			stroke: white;

@@ -5,13 +5,11 @@ import { headings, position } from "./stores/content";
 
 <section
 	id="table-of-contents"
-	class="group hidden items-center gap-x-2 hover:flex-col hover:items-start xl:flex print:hidden"
+	class="group hidden items-center gap-x-2 uppercase hover:flex-col hover:items-start md:flex print:hidden"
 >
-	<div class={'transition-opacity group-hover:opacity-25'}>
-		<Toc />
-	</div>
+	<Toc />
 	<div class="hidden group-hover:contents">
-		<ul class="list-disc bg-gray-200/75 uppercase dark:bg-gray-900/75">
+		<ul class="sticky top-0 list-disc bg-gray-50 dark:!bg-gray-950">
 			{#each $headings as { heading, href }}
 				{@const isCurrent = href === `#${$position}`}
 				<li class="hover:text-gray-800 dark:hover:text-gray-200">
@@ -27,7 +25,4 @@ import { headings, position } from "./stores/content";
 			{/each}
 		</ul>
 	</div>
-	<span class="hidden lg:block">
-		{$position}
-	</span>
 </section>

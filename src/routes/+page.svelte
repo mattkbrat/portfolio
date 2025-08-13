@@ -185,7 +185,4 @@ onMount(() => {
 			</div>
 		{/if}
 	</div>
-	<div class="fixed left-32 hidden lg:block">
-		<TableOfContents />
-	</div>
 </div>
