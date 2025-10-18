@@ -5,7 +5,7 @@ import { headings, position } from "./stores/content";
 
 <section
 	id="table-of-contents"
-	class="group hidden items-center gap-x-2 uppercase hover:flex-col hover:items-start md:flex print:hidden"
+	class="group hidden items-center gap-x-2 uppercase hover:flex-col hover:items-start md:absolute md:top-20 md:left-8 md:flex print:hidden"
 >
 	<Toc />
 	<div class="hidden group-hover:contents">
