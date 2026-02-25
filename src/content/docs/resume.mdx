@@ -1,0 +1,134 @@
+---
+title: Matthew Bratrsovsky
+head:
+  - tag: title
+    content: Resume | Matthew Bratrsovsky
+description: Software engineer specializing in building and operating production systems and internal platforms.
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  tagline: The key to success is continual improvement, failing fast, and learning from mistakes.   
+  actions:
+    - text: LinkedIn
+      link: https://www.linkedin.com/in/mattkbrat/
+      icon: external
+    - text: GitHub
+      link: https://github.com/mattkbrat
+      icon: external
+    - text: Email
+      link: mailto:mattkbrat@pm.me
+      icon: external
+    - text: Download Resume 
+      link: /resume.pdf
+      icon: download 
+    # This is toggled when generating the resume pdf
+    # - text: Website
+    #   link: https://mattkbrat.com
+    #   icon: external
+---
+
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+import HistoryTable from "../../components/history-table.astro"
+
+<script>
+console.log('hi')
+</script>
+
+
+<CardGrid>
+    ## My links
+    <LinkCard title="linkedin.com/in/mattkbrat/" href="https://www.linkedin.com/in/mattkbrat/" />
+    <LinkCard title="github.com/mattkbrat" href="https://github.com/mattkbrat" />
+    <LinkCard title="mattkbrat@pm.me" href="mailto:mattkbrat@pm.me" />
+    <LinkCard title="mattkbrat.com" href="https://mattkbrat.com" />
+</CardGrid>
+
+
+
+## Summary
+
+Software engineer specializing in building and operating production systems and internal platforms. 
+Designed and deployed telecom provisioning, dealership management, and real-time streaming 
+infrastructure serving 100,000+ users. Experienced in TypeScript, Rust, and PostgreSQL with a focus on 
+automation, reliability, and workflow efficiency.
+
+## Work Experience
+
+<HistoryTable id="viaero-wireless" title="Viaero Wireless" startDate="May 2022" description="Full Stack Developer"/>
+
+- Led cross-functional teams to deliver TypeScript/React applications and Rust CLI tools.
+- Analyzed workflows to build integrated solutions serving 100,000+ telecommunications customers.
+- Collaborate with stakeholders and train end users.
+
+<HistoryTable id="solutions-artisan-ltd" title="Solutions Artisan Ltd." startDate="May 2019" description="Developer (Contract)"/>
+
+  - Cut customer debt and bad debt by **~40%** by surfacing real-time payment data and overdue alerts in the DMS.
+  - Shrank average transaction time from 30 min to 7 min by automating manual data entry.
+  - Migrated a legacy on-prem desktop application to a cloud-hosted solution with minimal downtime.
+
+#### [CMB Auto Sales](https://cmbautosales.com)
+
+  - Cut customer debt and bad debt by **~40%** by surfacing real-time payment data and overdue alerts in the DMS.
+  - Shrank average transaction time from 30 min to 7 min by automating manual data entry.
+  - Migrated a legacy on-prem desktop application to a cloud-hosted solution with minimal downtime.
+
+#### [All About Paws Pet Spa, LLC.](https://www.fortmorgangrooming.com)
+
+  - Designed an attractive marketing website with a mobile-first focus.
+  - Helped establish and found various business assets.
+
+## Projects
+
+<HistoryTable id="weather-monitoring" title="Advanced Weather Monitoring" startDate="May 2019" description="Delivers critical weather monitoring capabilities to local broadcasters" href="https://cameras.viaero.com"/>
+
+- Empower news reporting teams with tools to capture and edit streams and videos.
+- Communicate with VAPIX endpoints for functions including PTZ and temperature control.
+- Streaming platform managing **100+** camera towers across multiple geographic regions.
+
+<HistoryTable id="netops-applications" title="Netops Applications" startDate="May 2019" description="Collaborate with company leaders to deploy mission-critical software" href="https://github.com/mattkbrat/netops-applications"/>
+
+<HistoryTable id="autoflp" title="AutoFLP" startDate="Jun 2022" description="Transforms operational efficiency for family-owned auto dealerships through comprehensive inventory, billing, and customer management" href="https://github.com/mattkbrat/autoflp-web"/>
+
+- Reduce administrative overhead by streamlining previously manual processes with a bespoke SvelteKit fullstack application.
+- Integrated Cloudflare Cloudflare R2/S3 and GCP for PDF document management.
+
+<HistoryTable id="cell-provisioning" title="Customer Cell Provisioning" startDate="Dec 2022" endDate="May 2023" description="Facilitate provisioner interactions with nodes from multiple providers on Viaero's network"/>
+
+- Developed a provisioning platform built on NextJS that serves over **100,000** customers.
+- Streamlined account management for customer service teams by translating user actions into XML requests.
+
+<HistoryTable id="cmbautosales.com" title="CMB Auto Sales" startDate="Aug 2024" endDate="Sep 2024" description="Deliver customers with information on CMB Auto Sales, a local auto dealership" href="https://cmbautosales.com"/>
+
+<HistoryTable id="allaboutpaws" title="All About Paws Pet Spa LLC." startDate="Jan 2023" description="Attract clients with images, well-written information, and mobile-first layouts" href="https://www.fortmorgangrooming.com"/>
+
+<HistoryTable id="fiber-troubleshooting" title="Fiber Troubleshooting" startDate="Aug 2022" endDate="Nov 2022" description="Facilitate individual troubleshooting for 150+ fiber-based corporate accounts with data visualization through SvelteKit and Chart.js"/>
+
+## Education
+
+<HistoryTable id="university" title="University of Northern Colorado" description="Bachelor of Business Administration, Computer Information Systems"/>
+
+- Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
+- Relevant Coursework
+  - Web Development, Database Design, Systems Analysis, Project Management, Security, Business Intelligence
+
+<Card title="Skills">
+
+## Skills
+
+**Technologies (ordered by proficiency)**
+
+*Languages*
+
+- Next.js, Bun/Node, PostgreSQL, React, Rust, Svelte, TypeScript, HTML, CSS, MongoDB, Python, Go
+
+*Tools*
+
+- Docker, NGINX, Playwright, Vitest, ElasticSearch, S3
+
+**Soft skills**
+
+- Leadership, Data Analysis, Change Management, Entrepreneurship, Collaboration
+
+**Hobbies**
+- Cooking, Personal Knowledge Management, Writing, Self-hosting, Gaming
+
+</Card>

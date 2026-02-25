@@ -1,0 +1,49 @@
+---
+const { id, title, startDate, endDate, description, href } = Astro.props;
+---
+
+<table id={id}>
+    <tbody>
+        <tr>
+            <th>
+                {href ? <a href={href}>{title}</a> : <span>{title}</span>}
+            </th>
+            {
+                startDate && (
+                    <th class="date">
+                        {startDate} – {endDate ?? "Current"}
+                    </th>
+                )
+            }
+        </tr>
+        <tr>
+            <td colspan="2">
+                {description}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+    table {
+        width: 100%;
+        table-layout: fixed;
+    }
+    tbody {
+        display: table;
+        width: 100%;
+    }
+    .date {
+        font-weight: normal;
+        text-align: right;
+    }
+    td,
+    th {
+        border-bottom: 0px transparent;
+        padding: 0px;
+    }
+    tr > td {
+        font-style: italic;
+        padding: 0px;
+    }
+</style>
