@@ -11,34 +11,19 @@
     }
     .hero {
         grid-template-columns: 1fr;
+        padding: 1rem;
     }
     a[href="/resume.pdf"] {
         margin-left: auto;
         font-weight: 800;
     }
-    article:has(#skills) {
-        * {
-            margin: 0px;
-        }
-        .level-h2 {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+    article:has(div ul) {
         border: 0px;
-        margin: 0px;
+        margin-block: 1rem;
         padding: 0px;
         .body {
             display: grid;
             grid-template-columns: 1fr auto;
-            ul {
-                list-style: none;
-                padding-left: 0.5rem;
-            }
-            li {
-                margin-left: 0;
-            }
         }
 
         .body > p:nth-child(2),
@@ -138,6 +123,9 @@
         .sl-container {
             outline: 0px transparent;
         }
+        .hero {
+            padding: 1rem 0;
+        }
         html {
             font-size: 12px;
         }
@@ -164,7 +152,8 @@
         }
 
         .actions,
-        header {
+        header,
+        .tagline {
             display: none;
         }
         .card-grid:has(#my-links) {
@@ -172,6 +161,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 0.5rem;
+            margin-top: -0.5rem;
             display: flex;
             flex-wrap: wrap;
             .sl-heading-wrapper {

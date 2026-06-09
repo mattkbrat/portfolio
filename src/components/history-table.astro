@@ -11,7 +11,8 @@ const { id, title, startDate, endDate, description, href } = Astro.props;
             {
                 startDate && (
                     <th class="date">
-                        {startDate} – {endDate ?? "Current"}
+                        {startDate}
+                        {endDate === "" ? "" : ` – ${endDate ?? "Current"}`}
                     </th>
                 )
             }
