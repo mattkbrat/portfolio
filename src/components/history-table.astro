@@ -5,7 +5,7 @@ const { id, title, startDate, endDate, description, href } = Astro.props;
 <table id={id}>
     <tbody>
         <tr>
-            <th>
+            <th class="sl-heading-wrapper level-h2">
                 {href ? <a href={href}>{title}</a> : <span>{title}</span>}
             </th>
             {
@@ -22,9 +22,11 @@ const { id, title, startDate, endDate, description, href } = Astro.props;
                 {description}
             </td>
         </tr>
+        <tr>
+            <td colspan="2" class="content"> <slot /> </td>
+        </tr>
     </tbody>
 </table>
-
 <style>
     table {
         width: 100%;
@@ -43,7 +45,7 @@ const { id, title, startDate, endDate, description, href } = Astro.props;
         border-bottom: 0px transparent;
         padding: 0px;
     }
-    tr > td {
+    tr > td:not(.content) {
         font-style: italic;
         padding: 0px;
     }
