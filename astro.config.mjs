@@ -19,6 +19,9 @@ export default defineConfig({
           href: "https://github.com/mattkbrat",
         },
       ],
+      components: {
+        Hero: './src/components/hero.astro'
+      }
     }),
   ],
 });
