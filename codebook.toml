@@ -1,4 +1,1 @@
-words = [
-    "Cloudflare",
-    "NGINX",
-]
+words = ["Cloudflare", "NGINX"]

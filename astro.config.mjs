@@ -20,8 +20,8 @@ export default defineConfig({
         },
       ],
       components: {
-        Hero: './src/components/hero.astro'
-      }
+        Hero: "./src/components/hero.astro",
+      },
     }),
   ],
 });

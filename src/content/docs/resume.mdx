@@ -12,10 +12,10 @@ links:
   - mattkbrat.com
 hero:
   tagline:
-   Full Stack Software Engineer with 5+ years of experience building telecommunications platforms, operational tooling,
-   and business applications. Delivered systems serving 100,000+ subscribers, reduced dealership bad debt by 40%, and
-   built monitoring infrastructure supporting 100+ live camera deployments. Specializes in TypeScript, React/Next.js,
-   PostgreSQL, and automation-driven solutions.
+    Full Stack Software Engineer with 5+ years of experience building telecommunications platforms, operational tooling,
+    and business applications. Delivered systems serving 100,000+ subscribers, reduced dealership bad debt by 40%, and
+    built monitoring infrastructure supporting 100+ live camera deployments. Specializes in TypeScript, React/Next.js,
+    PostgreSQL, and automation-driven solutions.
   actions:
     - text: LinkedIn
       link: https://www.linkedin.com/in/mattkbrat/
@@ -29,63 +29,106 @@ hero:
     - text: Download Resume
       link: /resume.pdf
       icon: download
-
 ---
 
-import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
-import HistoryTable from "../../components/history-table.astro"
-
+import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
+import HistoryTable from "../../components/history-table.astro";
 
 ## Skills
 
 - <i>Primary:</i> Next.js, Node/Bun, PostgreSQL, React, HTML, CSS
-- <i>Secondary:</i> Rust, Go,  Python, MongoDB, Svelte
+- <i>Secondary:</i> Rust, Go, Python, MongoDB, Svelte
 - <i>Infrastructure:</i> Docker, NGINX, Cloudflare R2, S3, Vitest, ElasticSearch
 - <i>Interests:</i> Leadership, Data Analysis, Entrepreneurship, Collaboration, Knowledge Management
 
 ## Work Experience
 
-<HistoryTable id="viaero-wireless" title="Viaero Wireless" startDate="May 2022" description="Full Stack Developer">
-- Delivered and maintained customer-facing and internal applications supporting **100,000+ telecommunications subscribers**.
-- Built provisioning and operational tooling that reduced manual workflows for customer service, marketing, and network operation teams.
-- Led cross-functional project teams and partnered with business stakeholders to gather requirements, deliver features, and train end users.
-- Mentored users and conducted training sessions for newly deployed software systems.
+<HistoryTable
+  id="viaero-wireless"
+  title="Viaero Wireless"
+  startDate="May 2022"
+  description="Full Stack Developer"
+>
+  - Delivered and maintained customer-facing and internal applications supporting **100,000+
+  telecommunications subscribers**. - Built provisioning and operational tooling that reduced manual
+  workflows for customer service, marketing, and network operation teams. - Led cross-functional
+  project teams and partnered with business stakeholders to gather requirements, deliver features,
+  and train end users. - Mentored users and conducted training sessions for newly deployed software
+  systems.
 </HistoryTable>
 
-<HistoryTable id="solutions-artisan-ltd" title="Solutions Artisan Ltd." startDate="May 2019" description="Developer (Contract)">
-- Designed and delivered custom software solutions for small businesses across automotive, retail, and service industries.
-- Led discovery, development, and client training for custom web applications and websites, including [All About Paws](https://fortmorgangrooming.com) and [CMB Auto Sales](https://cmbautosales.com).
+<HistoryTable
+  id="solutions-artisan-ltd"
+  title="Solutions Artisan Ltd."
+  startDate="May 2019"
+  description="Developer (Contract)"
+>
+  - Designed and delivered custom software solutions for small businesses across automotive, retail,
+  and service industries. - Led discovery, development, and client training for custom web
+  applications and websites, including [All About Paws](https://fortmorgangrooming.com) and [CMB
+  Auto Sales](https://cmbautosales.com).
 </HistoryTable>
 
 ## Projects
 
-<HistoryTable id="weather-monitoring" title="Advanced Weather Monitoring" startDate="May 2019" description="Delivers critical weather monitoring capabilities to local broadcasters" href="https://cameras.viaero.com">
-- Empowered news reporting teams with tools to facilitate real-time monitoring on weather and police activity.
-- Manages, streams, and captures more than **100 camera towers** spanning multiple geographic regions.
-- Control VAPIX cameras through a Bun server and Tanstack Start web application.
-- Integrates with Google APIs to deliver video to our audience through YouTube.
+<HistoryTable
+  id="weather-monitoring"
+  title="Advanced Weather Monitoring"
+  startDate="May 2019"
+  description="Delivers critical weather monitoring capabilities to local broadcasters"
+  href="https://cameras.viaero.com"
+>
+  - Empowered news reporting teams with tools to facilitate real-time monitoring on weather and
+  police activity. - Manages, streams, and captures more than **100 camera towers** spanning
+  multiple geographic regions. - Control VAPIX cameras through a Bun server and Tanstack Start web
+  application. - Integrates with Google APIs to deliver video to our audience through YouTube.
 </HistoryTable>
 
-<HistoryTable id="cell-provisioning" title="Customer Cell Provisioning" startDate="Dec 2022" endDate="May 2023" description="Interact with provisioner nodes from multiple providers on Viaero's network">
-- Developed a telecommunications provisioning platform using Next.js, Typescript, and XML-based carrier integrations.
-- Automated customer account provisioning workflows for a subscriber base exceeding 100,000 customers.
-- Reduced manual provisioning effort by translating user actions into provider-specific XML requests.
+<HistoryTable
+  id="cell-provisioning"
+  title="Customer Cell Provisioning"
+  startDate="Dec 2022"
+  endDate="May 2023"
+  description="Interact with provisioner nodes from multiple providers on Viaero's network"
+>
+  - Developed a telecommunications provisioning platform using Next.js, Typescript, and XML-based
+  carrier integrations. - Automated customer account provisioning workflows for a subscriber base
+  exceeding 100,000 customers. - Reduced manual provisioning effort by translating user actions into
+  provider-specific XML requests.
 </HistoryTable>
 
-<HistoryTable id="netops-applications" title="Netops Applications" startDate="May 2019" description="Collaborate with company leaders to deploy mission-critical software" href="https://github.com/mattkbrat/netops-applications">
-- Facilitated individual troubleshooting for 150+ fiber-based corporate accounts with data visualization.
-- Surfaced, tracked, and delivered equipment alarms by reading IMAP mailboxes and sending team-based and individual alerts.
+<HistoryTable
+  id="netops-applications"
+  title="Netops Applications"
+  startDate="May 2019"
+  description="Collaborate with company leaders to deploy mission-critical software"
+  href="https://github.com/mattkbrat/netops-applications"
+>
+  - Facilitated individual troubleshooting for 150+ fiber-based corporate accounts with data
+  visualization. - Surfaced, tracked, and delivered equipment alarms by reading IMAP mailboxes and
+  sending team-based and individual alerts.
 </HistoryTable>
 
-<HistoryTable id="autoflp" title="AutoFLP" startDate="Jun 2022" description="Transforms operational efficiency for family-owned auto dealerships" href="https://github.com/mattkbrat/autoflp-web">
-- **Cut bad debts by ~40%** through advanced data analytics, surfacing of real-time payments, and past-due alerting for a previously-offline application.
-- Shrank average **transaction time from 30 minutes to 7 minutes** through smart integration of customer information.
-- Reduce administrative overhead by streamlining previously manual processes with a bespoke fullstack application.
-- Integrated Cloudflare R2/S3 for PDF document management.
+<HistoryTable
+  id="autoflp"
+  title="AutoFLP"
+  startDate="Jun 2022"
+  description="Transforms operational efficiency for family-owned auto dealerships"
+  href="https://github.com/mattkbrat/autoflp-web"
+>
+  - **Cut bad debts by ~40%** through advanced data analytics, surfacing of real-time payments, and
+  past-due alerting for a previously-offline application. - Shrank average **transaction time from
+  30 minutes to 7 minutes** through smart integration of customer information. - Reduce
+  administrative overhead by streamlining previously manual processes with a bespoke fullstack
+  application. - Integrated Cloudflare R2/S3 for PDF document management.
 </HistoryTable>
 
 ## Education
 
-<HistoryTable id="university" title="University of Northern Colorado" description="Bachelor of Business Administration, Computer Information Systems">
-- Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
+<HistoryTable
+  id="university"
+  title="University of Northern Colorado"
+  description="Bachelor of Business Administration, Computer Information Systems"
+>
+  - Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
 </HistoryTable>

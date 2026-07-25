@@ -1,269 +1,262 @@
 @layer base, starlight, theme, components, utilities;
 
 @layer components {
-    html {
-        --sl-color-black: 0, 0%, 96.08%;
-        --sl-color-content: 0, 0%, 99.08%;
-        --sl-color-bg: hsl(var(--sl-color-black));
-        --sl-color-main: hsl(var(--sl-color-content));
-    }
+  html {
+    --sl-color-black: 0, 0%, 96.08%;
+    --sl-color-content: 0, 0%, 99.08%;
+    --sl-color-bg: hsl(var(--sl-color-black));
+    --sl-color-main: hsl(var(--sl-color-content));
+  }
 
-    ul > li > i {
-            font-style: unset;
-            font-weight: bolder;
-        /* Skills section */
-    }
+  ul > li > i {
+    font-style: unset;
+    font-weight: bolder;
+    /* Skills section */
+  }
 
-            /*li:first-of-type::after {
+  /*li:first-of-type::after {
 
                         content: ":"
             }*/
 
+  .content-panel {
+    display: contents;
+  }
 
-            .content-panel {
-                display: contents;
-            }
+  .sl-container {
+    outline: 2px solid black;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    background-color: var(--sl-color-content);
+  }
+  a[href="/resume.pdf"] {
+    margin-left: auto;
+    font-weight: 800;
+  }
+  article:has(div ul) {
+    border: 0px;
+    margin-block: 1rem;
+    padding: 0px;
+    .body {
+      display: grid;
+      grid-template-columns: 1fr auto;
+    }
 
+    .body > p:nth-child(2),
+    .body > p:nth-child(7),
+    .body > ul:nth-child(8),
+    .body > p:nth-child(9),
+    .body > ul:nth-child(10) {
+      grid-column: 1/-1;
+    }
+  }
+  .card:has(> div > #my-links) {
+    .sl-heading-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .card-grid > div {
+      flex: 1 1 300px;
+    }
+  }
+
+  .copy {
+    align-items: flex-start;
+  }
+
+  .tagline {
+    max-width: 100%;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .actions {
+    justify-content: flex-start;
+    gap: 0.5rem 0.5rem;
+    background: transparent;
+  }
+
+  .actions > a {
+    background: transparent;
+    color: inherit;
+    outline: 0;
+    border: 0;
+    font-size: large;
+    padding: 0;
+  }
+
+  .card-grid:has(#my-links),
+  starlight-theme-select {
+    display: none;
+  }
+  .sl-heading-wrapper,
+  .sl-heading-wrapper.level-h2 {
+    margin-top: 0.5rem;
+  }
+
+  h2,
+  .title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  h3,
+  th:first-of-type {
+    text-decoration: underline;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1150px) {
     .sl-container {
-        outline: 2px solid black;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        background-color: var(--sl-color-content);
+      outline: 0px transparent;
     }
-    a[href="/resume.pdf"] {
-        margin-left: auto;
-        font-weight: 800;
-    }
-    article:has(div ul) {
-        border: 0px;
-        margin-block: 1rem;
-        padding: 0px;
-        .body {
-            display: grid;
-            grid-template-columns: 1fr auto;
-        }
+  }
 
-        .body > p:nth-child(2),
-        .body > p:nth-child(7),
-        .body > ul:nth-child(8),
-        .body > p:nth-child(9),
-        .body > ul:nth-child(10) {
-            grid-column: 1/-1;
-        }
+  @media (prefers-color-scheme: dark) {
+    body {
+      --sl-color-black: hsl(0, 18%, 04%);
+      --sl-color-bg: var(--sl-color-black);
+      --sl-color-text: hsl(0, 18%, 96%);
+      --sl-color-content: hsl(0, 9%, 04%);
     }
-    .card:has(> div > #my-links) {
-        .sl-heading-wrapper {
-            position: absolute;
-            top: 0;
-            right: 0;
-            display: none;
-        }
-        .card-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 1.5rem;
-        }
+    .sl-container {
+      outline: 2px solid white;
+    }
+  }
 
-        .card-grid > div {
-            flex: 1 1 300px;
-        }
+  @media print {
+    table,
+    ul {
+      break-inside: avoid;
     }
 
-    .copy {
-        align-items: flex-start;
-    }
-
-    .tagline {
-        max-width: 100%;
-        font-size: 1rem;
-        text-align: left;
-    }
-
-    .actions {
-        justify-content: flex-start;
-        gap: 0.5rem 0.5rem;
-        background: transparent;
-    }
-
-    .actions > a {
-        background: transparent;
-        color: inherit;
-        outline: 0;
-        border: 0;
-        font-size: large;
-        padding: 0;
-    }
-
-    .card-grid:has(#my-links),
-    starlight-theme-select {
-        display: none;
-    }
-    .sl-heading-wrapper,
-   .sl-heading-wrapper.level-h2
-    {
-        margin-top: 0.5rem;
-    }
-
-    h2,
-    .title {
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-
-    h3,
-    th:first-of-type {
-        text-decoration: underline;
-        text-align: left;
-        font-size: 1.1rem;
-        font-weight: 800;
-    }
-
-    @media (max-width: 1150px) {
-        .sl-container {
-            outline: 0px transparent;
-        }
-    }
-
-    @media (prefers-color-scheme: dark) {
-        body {
-            --sl-color-black: hsl(0, 18%, 04%);
-            --sl-color-bg: var(--sl-color-black);
-            --sl-color-text: hsl(0, 18%, 96%);
-            --sl-color-content: hsl(0, 9%, 04%);
-        }
-        .sl-container {
-            outline: 2px solid white;
-        }
-    }
-
-
-    @media print {
-
-        table, ul {
-            break-inside: avoid;
-        }
-
-        /*table {
+    /*table {
             margin-top: unset;
         }*/
 
-        h2 {
-            text-decoration: underline;
-        }
+    h2 {
+      text-decoration: underline;
+    }
 
-        h3, th, th a {
-            text-decoration: none !important;
-        }
+    h3,
+    th,
+    th a {
+      text-decoration: none !important;
+    }
 
-        .sl-container {
-            outline: 0px transparent;
-        }
-        html {
-            font-size: 12px;
-        }
+    .sl-container {
+      outline: 0px transparent;
+    }
+    html {
+      font-size: 12px;
+    }
 
-        #main-frame {
-            padding: 0px;
-        }
+    #main-frame {
+      padding: 0px;
+    }
 
-        ul {
-            margin-top: 0;
-        }
+    ul {
+      margin-top: 0;
+    }
 
-        .sl-flex.stack {
-            gap: 0rem;
-        }
+    .sl-flex.stack {
+      gap: 0rem;
+    }
 
-        header {
-            display: none;
-        }
-        .card-grid:has(#my-links) {
-            margin-block: var(--sl-content-gap-y);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.5rem;
-            margin-top: -0.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            .sl-heading-wrapper {
-                display: none;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            svg {
-                display: none;
-            }
-            .sl-link-card {
-                padding: 0;
-                border: 0px;
-                box-shadow: none;
-                flex: 1 1 max-content;
-                text-decoration: underline;
-            }
-            .title {
-                font-size: 1rem;
-                text-transform: lowercase;
-                font-weight: normal;
-            }
-        }
+    header {
+      display: none;
+    }
+    .card-grid:has(#my-links) {
+      margin-block: var(--sl-content-gap-y);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-top: -0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      .sl-heading-wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      svg {
+        display: none;
+      }
+      .sl-link-card {
+        padding: 0;
+        border: 0px;
+        box-shadow: none;
+        flex: 1 1 max-content;
+        text-decoration: underline;
+      }
+      .title {
+        font-size: 1rem;
+        text-transform: lowercase;
+        font-weight: normal;
+      }
+    }
+  }
 
-
-}
-
-
-.hero-wrapper {
+  .hero-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 0.5rem;
     grid-template-areas:
-        "title"
-        "actions"
-        "tagline";
+      "title"
+      "actions"
+      "tagline";
 
-  .copy,
- .hero, .hero > .sl-flex
-    {
-        display: contents;
+    .copy,
+    .hero,
+    .hero > .sl-flex {
+      display: contents;
     }
     .tagline {
-        grid-area: tagline;
+      grid-area: tagline;
     }
     .actions {
-        grid-area: actions;
+      grid-area: actions;
     }
     h1 {
-        text-align: left;
-        grid-area: title;
+      text-align: left;
+      grid-area: title;
     }
 
     .page-links {
-        display: none;
-        grid-area: actions;
-        flex-wrap: wrap;
-        justify-content: space-between;
+      display: none;
+      grid-area: actions;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
+  }
 }
 
-
 @media print {
-
-    .hero-wrapper {
-
-        .actions {
-            grid-area: unset;
-            display: none;
-        }
-
-        .page-links {
-            display: flex;
-            grid-area: actions;
-                        a {
-                            text-decoration: underline;
-                        }
-        }
+  .hero-wrapper {
+    .actions {
+      grid-area: unset;
+      display: none;
     }
 
+    .page-links {
+      display: flex;
+      grid-area: actions;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
 }

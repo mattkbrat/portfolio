@@ -1,13 +1,14 @@
 {
   "name": "",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "oxfmt"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.37.7",
@@ -15,6 +16,7 @@
     "sharp": "^0.34.2"
   },
   "devDependencies": {
+    "oxfmt": "^0.60.0",
     "wrangler": "^4.114.0"
   }
 }
