@@ -1,5 +1,9 @@
 @layer base, starlight, theme, components, utilities;
 
+.hidden {
+    display: none;
+}
+
 @layer components {
   html {
     --sl-color-black: 0, 0%, 96.08%;

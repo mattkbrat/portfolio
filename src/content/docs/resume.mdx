@@ -86,6 +86,20 @@ import HistoryTable from "../../components/history-table.astro";
 </HistoryTable>
 
 <HistoryTable
+  id="smpp-stack"
+  title="Paging and SMS platform"
+  startDate="Feb 2026"
+  endDate="Aug 2026"
+  description="Serves the full customer service team and highly-available network operations staff"
+>
+  - Led end-to-end delivery of a mission-critical paging and SMS platform, replacing a legacy Windows application with a high-availability microservices stack (Bun/Elysia, Rust, RabbitMQ, PostgreSQL) deployed on Docker Swarm and serving the full customer service team and 30 rotating on-call networking staff.
+  - Architected a two-layer monorepo: a transport layer that submits SMS to a carrier SMSC over SMPP and tracks every status transition; and a product layer that ingests Huawei network alarms over IMAP, resolves on-call ownership from Microsoft Entra, and dispatches pages via SMS and email.
+  - Built a Rust SMPP transceiver that bridges AMQP and the carrier SMSC as a pure protocol adapter, handling up to **100 messages/second** and publishing all status transitions back to the stack for real-time persistence and WebSocket fan-out.
+  - Owned full lifecycle of the system, including requirements gathering, stakeholder collaboration, implementation, and deployment.
+  - Ensured reliable, 24/7 on-call paging and customer communication with no single point of failure.
+</HistoryTable>
+
+<HistoryTable
   id="cell-provisioning"
   title="Customer Cell Provisioning"
   startDate="Dec 2022"
@@ -101,10 +115,10 @@ import HistoryTable from "../../components/history-table.astro";
 
 <HistoryTable
   id="netops-applications"
+  hidden
   title="Netops Applications"
   startDate="May 2019"
   description="Collaborate with company leaders to deploy mission-critical software"
-  href="https://github.com/mattkbrat/netops-applications"
 >
   - Facilitated individual troubleshooting for 150+ fiber-based corporate accounts with data
   visualization.

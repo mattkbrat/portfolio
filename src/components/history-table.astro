@@ -1,8 +1,9 @@
 ---
-const { id, title, startDate, endDate, description, href } = Astro.props;
+const { id, title, startDate, endDate, description, href, hidden } =
+    Astro.props;
 ---
 
-<table id={id}>
+<table id={id} class:list={[{ hidden: hidden }]}>
     <tbody>
         <tr>
             <th class="sl-heading-wrapper level-h2">
