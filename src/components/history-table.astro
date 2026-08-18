@@ -1,53 +1,60 @@
 ---
-const { id, title, startDate, endDate, description, href, hidden } =
-    Astro.props;
+const {
+    id,
+    title,
+    startDate,
+    endDate,
+    description,
+    href,
+    hidden,
+    PopoverContent,
+} = Astro.props;
+import Search from "./icons/search.astro";
+const isSmppStack = id === "smpp-stack";
 ---
 
-<table id={id} class:list={[{ hidden: hidden }]}>
-    <tbody>
-        <tr>
-            <th class="sl-heading-wrapper level-h2">
-                {href ? <a href={href}>{title}</a> : <span>{title}</span>}
-            </th>
-            {
-                startDate && (
-                    <th class="date">
-                        {startDate}
-                        {endDate === "" ? "" : ` – ${endDate ?? "Current"}`}
-                    </th>
-                )
-            }
-        </tr>
-        <tr>
-            <td colspan="2">
-                {description}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="content"> <slot /> </td>
-        </tr>
-    </tbody>
-</table>
-<style>
-    table {
-        width: 100%;
-        table-layout: fixed;
+<div id={id} class:list={[{ hidden: hidden, project: !hidden }]}>
+    <h2 class="sl-heading-wrapper level-h2">
+        {
+            href ? (
+                <a href={href}>{title}</a>
+            ) : isSmppStack ? (
+                <div class="flex gap-1 items-end">
+                    <a href="https://mattkbrat.com/projects/smpp">{title}</a>
+                    <button
+                        type="button"
+                        popovertarget={`${id}-mermaid`}
+                        class="ghost underline flex gap-1"
+                    >
+                        <Search />
+                    </button>
+                </div>
+            ) : (
+                <span>{title}</span>
+            )
+        }
+    </h2>
+    {
+        startDate && (
+            <span class="date">
+                {startDate}
+                {endDate === "" ? "" : ` – ${endDate ?? "Current"}`}
+            </span>
+        )
     }
-    tbody {
-        display: table;
-        width: 100%;
-    }
-    .date {
-        font-weight: normal;
-        text-align: right;
-    }
-    td,
-    th {
-        border-bottom: 0px transparent;
-        padding: 0px;
-    }
-    tr > td:not(.content) {
-        font-style: italic;
-        padding: 0px;
-    }
-</style>
+    <div class="col-span-full">
+        {description}
+    </div>
+    <div class="col-span-full"><slot /></div>
+</div>
+{
+    isSmppStack && PopoverContent && (
+        <div
+            popover
+            id={`${id}-mermaid`}
+            class="mermaid popover max-h-[60dvh] lg:max-h-[90dvh] m-auto overflow-auto outline-2 rounded-sm shadow-sm sl-container bg-[#f5f5f5] dark:bg-[#0c0808]"
+        >
+            <PopoverContent />
+        </div>
+    )
+}

@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> Connecting
+    Connecting --> Binding: TCP connect ok
+    Connecting --> Backoff: connect error
+    Binding --> Bound: bind_transceiver_resp ESME_ROK
+    Binding --> Backoff: bind error, client.close first
+    Bound --> Bound: enquire_link every 20s, auto EnquireLinkResp
+    Bound --> Bound: submit_sm or deliver_sm resets inactivity timer
+    Bound --> Idle: no PDU for SMS_INACTIVITY_TIMEOUT_SECS, unbind + close
+    Idle --> Connecting: outbound message arrives, stored as pending_message
+    Bound --> Backoff: event stream ended, ConnectionLost
+    Backoff --> Connecting: sleep min 5s times 2^attempts, capped 60s
+    Bound --> Stopped: shutdown signal, unbind + close
+    Idle --> Stopped: shutdown signal
+    Stopped --> [*]

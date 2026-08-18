@@ -1,0 +1,23 @@
+flowchart TD
+    SRV[apps/server in-process consumer]
+    SRV -->|sendToQueue protobuf Message| Q1[queue netops-smpp]
+    Q1 -->|basic_consume smpp_consumer| SC[StreamConsumer delegate]
+    SC --> MP[MessageProcessor process_stream_entry]
+    MP --> DE[deserialize_message prost decode]
+    DE --> TX[mpsc send_tx capacity 100]
+    TX --> RL[run_listener connected loop]
+    RL --> LK[lookup preflight_check when SMS_LOOKUP_API_KEY set]
+    LK --> DS[do_send builds SubmitSm]
+    DS -->|submit_sm registered_delivery request_all| SMSC[SMSC]
+
+    SMSC -->|deliver_sm / DLR| EV[Event Incoming DeliverSm]
+    EV --> INC[Incoming from_event]
+    INC --> MSG[Message status RECEIVED source smpp-server]
+    MSG --> PUB[basic_publish exchange smpp rk to_nodejs]
+    DS -.->|status SENDING| PUB
+    MP -.->|status SENT| PUB
+    RL -.->|status FAILED plus error_reason| PUB
+    PUB --> Q2[queue to_nodejs]
+    Q2 --> NODE[apps/server setupReceiveChannel]
+    NODE --> PG[Postgres message, message_smpp, message_status_history]
+    NODE --> WS[WebSocket topic smpp]

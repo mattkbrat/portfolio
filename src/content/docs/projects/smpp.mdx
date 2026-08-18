@@ -1,0 +1,28 @@
+---
+title: SMPP Stack
+head:
+  - tag: title
+    content: Resume | Matthew Bratrsovsky
+description: SMPP stack that sends sms messages and processes alarms.
+template: splash
+hero:
+  tagline:
+    A Bun + Turborepo monorepo that delivers SMS through a carrier SMSC over SMPP,
+    and builds an on-call paging product on top of it.
+  actions:
+    - text: Return to resume
+      link: /
+---
+
+The stack splits into two layers.
+1. The **transport layer**: (Bun/Elysia API), `services/rabbitmq` (broker), and `services/smpp` (Rust SMPP
+transceiver) accepts message requests over HTTP, persists them, and submits
+them to the SMSC, tracking every status transition back to the database.
+2. The **product layer** ingests Huawei network alarms from an IMAP
+mailbox, resolves who is on call from an escalation ladder synced out of
+Microsoft Entra, and pages them by SMS (through the transport layer) and email.
+
+import "../../../styles/resume.css"
+import SmppContent from "../../../components/smpp/details.astro"
+
+<SmppContent/>

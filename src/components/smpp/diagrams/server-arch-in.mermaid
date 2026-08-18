@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    participant S as SMSC
+    participant R as Rust smpp service
+    participant Q as RabbitMQ
+    participant N as to_nodejs consumer
+    participant PG as Postgres
+    participant W as WebSocket clients
+    participant P as paging queue
+
+    R->>Q: publish(smpp exchange, rk to_nodejs)
+    Note over R,Q: SENDING before submit_sm
+    Note over R,Q: SENT on success, FAILED with error_reason
+    S->>R: deliver_sm (inbound SMS / receipt)
+    R->>Q: publish Message status RECEIVED
+    Q->>N: protobuf Message
+    N->>N: fromBinary(MessageSchema)
+    opt body starts with ack
+        N->>P: forward JSON to AMQP_PAGING_QUEUE
+    end
+    alt message.id unknown to Postgres
+        N->>PG: insert message + message_smpp
+        N->>Q: enqueue if status SCHEDULED
+    else known message
+        N->>W: publish UPDATE_MESSAGE
+    end
+    N->>PG: insert message_status_history
+    N->>Q: ack
