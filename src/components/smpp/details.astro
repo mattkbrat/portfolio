@@ -1,16 +1,21 @@
 ---
-import { getMermaid } from "../../lib/content";
-import FlowMermaid from "/diagrams/smpp/flow.mermaid?url";
-import SessionMermaid from "/diagrams/smpp/session-lifecycle.mermaid?url";
-import PagingArchitectureMermaid from "/diagrams/smpp/paging-architecture.mermaid?url";
-import ServerArchInMermaid from "/diagrams/smpp/server-arch-in.mermaid?url";
-import ServerArchOutMermaid from "/diagrams/smpp/server-arch-out.mermaid?url";
+import FlowMermaid from "./diagrams/flow.mermaid?raw";
+import SessionMermaid from "./diagrams/session-lifecycle.mermaid?raw";
+import PagingArchitectureMermaid from "./diagrams/paging-architecture.mermaid?raw";
+import ServerArchInMermaid from "./diagrams/server-arch-in.mermaid?raw";
+import ServerArchOutMermaid from "./diagrams/server-arch-out.mermaid?raw";
 
-const flowSvg = await getMermaid(FlowMermaid, Astro.url);
-const sessionSvg = await getMermaid(SessionMermaid, Astro.url);
-const pagingArchSvg = await getMermaid(PagingArchitectureMermaid, Astro.url);
-const serverArchIn = await getMermaid(ServerArchInMermaid, Astro.url);
-const serverArchOut = await getMermaid(ServerArchOutMermaid, Astro.url);
+import { renderMermaidSVG, THEMES } from "beautiful-mermaid";
+
+function getSvg(t: string) {
+    return renderMermaidSVG(t, THEMES["catppuccin-latte"]);
+}
+
+const flowSvg = getSvg(FlowMermaid);
+const sessionSvg = getSvg(SessionMermaid);
+const pagingArchSvg = getSvg(PagingArchitectureMermaid);
+const serverArchIn = getSvg(ServerArchInMermaid);
+const serverArchOut = getSvg(ServerArchOutMermaid);
 ---
 
 <nav id="smpp-details" class="flex gap-4 underline flex-wrap">

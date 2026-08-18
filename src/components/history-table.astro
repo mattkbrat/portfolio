@@ -10,7 +10,6 @@ const {
     PopoverContent,
 } = Astro.props;
 import Search from "./icons/search.astro";
-
 const isSmppStack = id === "smpp-stack";
 ---
 
@@ -21,7 +20,7 @@ const isSmppStack = id === "smpp-stack";
                 <a href={href}>{title}</a>
             ) : isSmppStack ? (
                 <div class="flex gap-1 items-end">
-                    <a href="/projects/smpp">{title}</a>
+                    <a href="https://mattkbrat.com/projects/smpp">{title}</a>
                     <button
                         type="button"
                         popovertarget={`${id}-mermaid`}
