@@ -1,4 +1,5 @@
 @layer base, starlight, theme, components, utilities;
+@import "tailwindcss";
 
 .hidden {
     display: none;
@@ -10,6 +11,11 @@
     --sl-color-content: 0, 0%, 99.08%;
     --sl-color-bg: hsl(var(--sl-color-black));
     --sl-color-main: hsl(var(--sl-color-content));
+  }
+
+  ul {
+      list-style: disc;
+      margin-left: 1.4rem;
   }
 
   ul > li > i {
@@ -99,7 +105,7 @@
   }
 
   .card-grid:has(#my-links),
-  starlight-theme-select {
+  starlight-theme-select, .pagination-links {
     display: none;
   }
   .sl-heading-wrapper,
@@ -141,7 +147,7 @@
   }
 
   @media print {
-    table,
+      .project,
     ul {
       break-inside: avoid;
     }

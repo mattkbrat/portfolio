@@ -1,0 +1,25 @@
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant E as Elysia route
+    participant PG as Postgres
+    participant Q as RabbitMQ
+    participant K as In-process consumer
+    participant R as Rust smpp service
+    participant S as SMSC
+
+    C->>E: POST /api/sms/v1/smpp/send
+    E->>E: hasAuth macro (x-api-key or session)
+    E->>E: valibot MessageBodySchema
+    E->>PG: insert message (scheduled=true)
+    E->>PG: insert message_smpp
+    E->>PG: insert message_status_history SCHEDULED
+    E-->>C: 201 Created
+    E->>Q: sendToQueue(AMQP_SMPP_QUEUE, JSON batch)
+    Q->>K: deliver batch
+    K->>PG: claim row (scheduled true to false)
+    K->>PG: insert history PENDING
+    K->>Q: sendToQueue(AMQP_QUEUE, protobuf Message)
+    K->>PG: insert history SENT or FAILED
+    Q->>R: deliver protobuf
+    R->>S: submit_sm (registered_delivery=all)

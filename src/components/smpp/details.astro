@@ -1,0 +1,157 @@
+---
+import { getMermaid } from "../../lib/content";
+import FlowMermaid from "/diagrams/smpp/flow.mermaid?url";
+import SessionMermaid from "/diagrams/smpp/session-lifecycle.mermaid?url";
+import PagingArchitectureMermaid from "/diagrams/smpp/paging-architecture.mermaid?url";
+import ServerArchInMermaid from "/diagrams/smpp/server-arch-in.mermaid?url";
+import ServerArchOutMermaid from "/diagrams/smpp/server-arch-out.mermaid?url";
+
+const flowSvg = await getMermaid(FlowMermaid, Astro.url);
+const sessionSvg = await getMermaid(SessionMermaid, Astro.url);
+const pagingArchSvg = await getMermaid(PagingArchitectureMermaid, Astro.url);
+const serverArchIn = await getMermaid(ServerArchInMermaid, Astro.url);
+const serverArchOut = await getMermaid(ServerArchOutMermaid, Astro.url);
+---
+
+<nav id="smpp-details" class="flex gap-4 underline flex-wrap">
+    <a href="#smpp-message-flow">Message Flow</a>
+    <a href="#smpp-session-lifecycle">Session Lifecycle</a>
+    <a href="#smpp-transceiver">SMPP Transceiver</a>
+    <a href="#smpp-server">Server App</a>
+    <a href="#smpp-paging">Paging App</a>
+</nav>
+
+{
+    flowSvg && (
+        <section>
+            <div class="w-text mx-auto">
+                <div class="flex gap-2 items-end w-text">
+                    <h3
+                        id="smpp-message-flow"
+                        class="sl-heading-wrapper level-h3"
+                    >
+                        Message Flow
+                    </h3>
+                    <a href="#smpp-details">▲</a>
+                </div>
+                <p class="mt-0!">
+                    <br /> The "status update" half of the return path is
+                    performed by the server app after it decodes the protobuf
+                    message.
+                </p>
+            </div>
+            <Fragment set:html={flowSvg} />
+        </section>
+    )
+}
+{
+    sessionSvg && (
+        <section>
+            <div class="w-text mx-auto">
+                <div class="flex gap-2 items-end w-text">
+                    <h3
+                        id="smpp-session-lifecycle"
+                        class="sl-heading-wrapper level-h3"
+                    >
+                        Session Lifecycle
+                    </h3>
+                    <a href="#smpp-details">▲</a>
+                </div>
+                <p>
+                    <code>health.smpp_bound</code>
+                    is set true immediately after a successful bind and false on
+                    ConnectionLost.
+                    <br /> The Idle state deliberately leaves it true, so an
+                    idle-unbound service still reports healthy.
+                </p>
+            </div>
+            <Fragment set:html={sessionSvg} />
+        </section>
+    )
+}
+
+<section>
+    <div class="w-text mx-auto">
+        <div class="flex gap-2 items-end w-text">
+            <h3 id="smpp-transceiver">SMPP Transceiver Service</h3>
+            <a href="#smpp-details">▲</a>
+        </div>
+        <p>
+            Rust ESME for the stack. It binds to the carrier SMSC as an SMPP
+            transceiver, consumes protobuf-encoded work items from RabbitMQ,
+            submits them as <code>submit_sm</code>, and publishes every status
+            transition plus every inbound <code>deliver_sm</code> back onto the exchange.
+            Here the server app persists it to Postgres and fans it out over WebSocket.
+            The transceiver service does not hold a database connection; it is a pure
+            protocol bridge between AMQP and the SMSC with an optional pre-send number-type
+            lookup and an HTTP readiness probe.
+        </p>
+    </div>
+</section>
+<section>
+    <div class="w-text mx-auto">
+        <div class="flex gap-2 items-end w-text">
+            <h3 id="smpp-server">SMPP Server App</h3>
+            <a href="#smpp-details">▲</a>
+        </div>
+        <p>
+            HTTP/API front door for SMPP messaging in the stack. A Bun + Elysia
+            application that accepts message requests over HTTP, validates and
+            persists them to Postgres, publishes work batches to RabbitMQ, hands
+            protobuf-encoded messages to the Rust smpp transceiver for
+            submission to the SMSC, consumes status updates coming back from
+            that transceiver, maintains a full status history per message, and
+            exposes monitoring, message-template CRUD, WebSocket fan-out,
+            authentication (better-auth) and an OpenAPI document.
+        </p>
+    </div>
+    <p class="font-semibold w-text mx-auto">Outbound path</p>
+    {serverArchOut && <Fragment set:html={serverArchOut} />}
+    <p class="font-semibold w-text mx-auto">Inbound / status path</p>
+    {serverArchIn && <Fragment set:html={serverArchIn} />}
+</section>
+
+<section>
+    <div class="w-text mx-auto">
+        <div class="flex gap-2 items-end w-text">
+            <h3 id="smpp-paging">Paging App</h3>
+            <a href="#smpp-details">▲</a>
+        </div>
+        <p>
+            <span>
+                Product-level integration of the netops-paging stack. This Bun +
+                Elysia app ingests network alarms from a Huawei alarm mailbox
+                over IMAP, normalizes them into the paging Postgres database,
+                resolves who is currently on call from Microsoft Entra group
+                membership, and pages that person by SMS (through the RabbitMQ
+                -> apps/server -> services/smpp chain) and/or email (direct
+                SMTP). Inbound "ACK" replies flow back through the same broker
+                and clear the alarms.
+            </span>
+            <span>
+                Alarm ingestion, on-call resolution, and dispatch are three
+                separate stages that communicate only through Postgres. The <code
+                    >active_alarms
+                </code> view is the boundary: the mail side writes <code
+                    >alarm_instance</code
+                > rows, the paging side reads the view (which has already resolved
+                the next escalation level and its contact addresses) and emits messages.
+            </span>
+        </p>
+    </div>
+    {pagingArchSvg && <Fragment set:html={pagingArchSvg} />}
+</section>
+
+<div class="bottom-spacer"></div>
+
+<style>
+    section {
+        margin-inline: auto;
+    }
+    .w-text {
+        max-width: 80ch;
+    }
+    .bottom-spacer {
+        height: 2lh;
+    }
+</style>

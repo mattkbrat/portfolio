@@ -1,0 +1,31 @@
+flowchart TD
+    MBOX["Huawei alarm mailbox (IMAP 993)"]
+    MS["MailService (src/modules/mail)"]
+    PG[("Postgres — paging DB")]
+    VIEW["active_alarms view"]
+    AS["AlarmsService (src/modules/alarms)"]
+    SMTP["SMTP relay (nodemailer pool)"]
+    RMQ["RabbitMQ client-vhost"]
+    SRV["apps/server (Bun/Elysia)"]
+    SMPP["services/smpp (Rust transceiver)"]
+    PHONE["On-call phones"]
+    GRAPH["Microsoft Graph — Entra groups"]
+    OS["OncallService (src/modules/oncall)"]
+    REDIS[("Redis / Valkey")]
+
+    MBOX -->|"fetchUnseenMessages, mark Seen, move to Trash"| MS
+    MS -->|"Parse + Validate + insertAlarm"| PG
+    MS -->|"processOncallMessages"| AS
+    PG --> VIEW
+    VIEW -->|"next_escalation + addresses"| AS
+    AS -->|"insert paging_run rows"| PG
+    AS -->|"protobuf Message to queue to_nodejs"| RMQ
+    AS -->|"transport.sendMail"| SMTP
+    RMQ --> SRV
+    SRV -->|"JSON batch to AMQP_SMPP_QUEUE"| SMPP
+    SMPP -->|"SMPP submit_sm"| PHONE
+    SMTP --> PHONE
+
+    GRAPH -->|"group members, group info"| OS
+    OS -->|"cached lists + bearer token"| REDIS
+    OS -->|"staff / contact / staff_team / staff_social"| PG

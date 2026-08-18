@@ -33,6 +33,8 @@ hero:
 
 import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
 import HistoryTable from "../../components/history-table.astro";
+import SmppDetails from "../../components/smpp/details.astro"
+import "../../styles/resume.css"
 
 ## Skills
 
@@ -91,6 +93,7 @@ import HistoryTable from "../../components/history-table.astro";
   startDate="Feb 2026"
   endDate="Aug 2026"
   description="Serves the full customer service team and highly-available network operations staff"
+  PopoverContent={SmppDetails}
 >
   - Led end-to-end delivery of a mission-critical paging and SMS platform, replacing a legacy Windows application with a high-availability microservices stack (Bun/Elysia, Rust, RabbitMQ, PostgreSQL) deployed on Docker Swarm and serving the full customer service team and 30 rotating on-call networking staff.
   - Architected a two-layer monorepo: a transport layer that submits SMS to a carrier SMSC over SMPP and tracks every status transition; and a product layer that ingests Huawei network alarms over IMAP, resolves on-call ownership from Microsoft Entra, and dispatches pages via SMS and email.
