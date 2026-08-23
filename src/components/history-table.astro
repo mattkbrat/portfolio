@@ -20,7 +20,8 @@ const isSmppStack = id === "smpp-stack";
                 <a href={href}>{title}</a>
             ) : isSmppStack ? (
                 <div class="flex gap-1 items-end">
-                    <a href="/projects/smpp">{title}</a>
+                  <span>{title}</span>
+                    <!-- <a href="/projects/smpp">{title}</a> -->
                     <button
                         type="button"
                         popovertarget={`${id}-mermaid`}
