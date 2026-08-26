@@ -3,6 +3,17 @@ import Default from "@astrojs/starlight/components/Hero.astro";
 const { links } = Astro.locals.starlightRoute.entry.data;
 ---
 
+<script>
+  const search = new URLSearchParams(location.search)
+  const action = search.get('action')
+  if (action === 'print') {
+    window.print()
+    search.delete('action')
+    window.location.search = search.toString()
+  }
+</script>
+
+
 <div class="hero-wrapper">
     <Default>
         <slot />

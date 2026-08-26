@@ -10,24 +10,27 @@ export default defineConfig({
   site: "https://mattkbrat.com/resume",
   redirects: {
     "/": "/resume",
+    "/resume.pdf": "/resume?action=print",
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
-  integrations: [starlight({
-    pagefind: false,
-    title: "Matthew Bratrsovsky",
-    customCss: ["./src/styles/main.css"],
-    social: [
-      {
-        icon: "github",
-        label: "GitHub",
-        href: "https://github.com/mattkbrat",
+  integrations: [
+    starlight({
+      pagefind: false,
+      title: "Matthew Bratrsovsky",
+      customCss: ["./src/styles/main.css"],
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/mattkbrat",
+        },
+      ],
+      components: {
+        Hero: "./src/components/hero.astro",
       },
-    ],
-    components: {
-      Hero: "./src/components/hero.astro",
-    },
-  }),
-  sitemap()],
+    }),
+    sitemap(),
+  ],
 });
