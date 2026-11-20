@@ -11,12 +11,11 @@ links:
   - mattkbrat@pm.me
   - mattkbrat.com
 hero:
-  tagline:
-    <b>Lead Software Engineer · Full Stack · AppSec-Focused</b>
+  tagline: <b>Lead Software Engineer · Full Stack · AppSec-Focused</b>
     <br/>
-    5+ years of experience designing and maintaining production systems across telecommunications and business applications. 
-    Owns architecture, development, and deployment of platforms supporting a carrier serving 100,000+ subscribers, with experience in 
-    external integrations, distributed messaging, and operational monitoring. Currently expanding into application security 
+    5+ years of experience designing and maintaining production systems across telecommunications and business applications.
+    Owns architecture, development, and deployment of platforms supporting a carrier serving 100,000+ subscribers, with experience in
+    external integrations, distributed messaging, and operational monitoring. Currently expanding into application security
     through secure development practices, vulnerability management, and CI/CD security integration.
   actions:
     - text: LinkedIn
@@ -35,12 +34,12 @@ hero:
 
 import { LinkCard, Card, CardGrid } from "@astrojs/starlight/components";
 import HistoryTable from "../../components/history-table.astro";
-import SmppDetails from "../../components/smpp/details.astro"
-import "../../styles/resume.css"
-
+import SmppDetails from "../../components/smpp/details.astro";
+import "../../styles/resume.css";
 
 ## Experience
-<hr/>
+
+<hr />
 
 <HistoryTable
   id="viaero-wireless"
@@ -48,14 +47,27 @@ import "../../styles/resume.css"
   startDate="May 2022"
   description="Lead Software Engineer"
 >
-Lead engineer for customer-facing and internal platforms serving 100,000+ subscribers, collaborating daily with customer service, marketing, network operations, and company leadership.
- 
-- Built a customer cell provisioning platform integrating multiple external carrier providers through XML-based protocols, translating user actions into provider-specific requests and automating provisioning for a 100,000+ subscriber base.
-- Served as the primary engineer for internal platforms, independently managing architecture and implementation while collaborating closely with operational teams and business stakeholders.
-- Trained three departments of end users on newly deployed systems, sustaining adoption through hands-on sessions and individual troubleshooting.
-- Architected, owned, and deployed a highly available paging and SMS platform, integrating carrier messaging infrastructure, identity management, and asynchronous processing across containerized microservices.
-  - Designed a two-layer monorepo including a transport layer that submits SMS to a carrier SMSC over SMPP and tracks every status transition with RabbitMQ; and a product layer that ingests Huawei network alarms over IMAP, resolves on-call ownership from Microsoft Entra, and dispatches pages via SMS and email.
-  - Built a Rust SMPP transceiver that bridges AMQP and the carrier SMSC as a pure protocol adapter, publishing all status transitions back to the stack for real-time persistence and WebSocket fan-out.
+  Lead engineer for customer-facing and internal platforms serving 100,000+ subscribers,
+  collaborating daily with customer service, marketing, network operations, and company leadership.
+
+- Built a customer cell provisioning platform integrating multiple external carrier providers
+  through XML-based protocols, translating user actions into provider-specific requests and
+  automating provisioning for a 100,000+ subscriber base.
+- Served as the primary engineer for internal platforms, independently managing architecture and implementation while collaborating
+  closely with operational teams and business stakeholders.
+- Trained three departments of end users
+  on newly deployed systems, sustaining adoption through hands-on sessions and individual
+  troubleshooting.
+- Architected, owned, and deployed a highly available paging and SMS platform,
+  integrating carrier messaging infrastructure, identity management, and asynchronous processing
+  across containerized microservices.
+      - Designed a two-layer monorepo including a transport layer
+      that submits SMS to a carrier SMSC over SMPP and tracks every status transition with RabbitMQ; and
+      a product layer that ingests Huawei network alarms over IMAP, resolves on-call ownership from
+      Microsoft Entra, and dispatches pages via SMS and email.
+      - Built a Rust SMPP transceiver that
+      bridges AMQP and the carrier SMSC as a pure protocol adapter, publishing all status transitions
+      back to the stack for real-time persistence and WebSocket fan-out.
 </HistoryTable>
 
 <HistoryTable
@@ -66,7 +78,7 @@ Lead engineer for customer-facing and internal platforms serving 100,000+ subscr
 >
 Founded an independent software consultancy providing bespoke systems for locally owned businesses.
 
-*Flagship engagement*: AutoFLP, for a family-owned auto dealership group
+_Flagship engagement_: AutoFLP, for a family-owned auto dealership group
 
 - Designed and shipped a bespoke full-stack application for dealership finance workflows after running discovery with owners and staff, cutting average transaction time from 30 minutes to 7 minutes.
 - Built data analytics surfacing real-time payment status and past-due alerting for a previously-offline operation, cutting dealer bad debt by roughly 40%.
@@ -75,7 +87,6 @@ Founded an independent software consultancy providing bespoke systems for locall
 Other work including marketing websites for <a href="https://fortmorgangrooming.com">All About Paws Pet Spa, LLC.</a> and <a href="https://cmbautosales.com">CMB Auto Sales</a>
 
 </HistoryTable>
-
 
 <div class="box">
 ## Skills
@@ -88,6 +99,7 @@ Other work including marketing websites for <a href="https://fortmorgangrooming.
 **Integration & infrastructure:** REST APIs, XML carrier integrations, IMAP ingestion, Cloudflare R2/S3, ElasticSearch, Docker, NGINX
 
 **Working knowledge:** Python, Go, Rust, MongoDB, Svelte, Vitest
+
 </div>
 
 <div class="box">
@@ -95,6 +107,7 @@ Other work including marketing websites for <a href="https://fortmorgangrooming.
 <hr/>
 
 B.B.A., Computer Information Systems, University of Northern Colorado; Reisher Family Scholarship, Phi Sigma Pi honor fraternity
+
 </div>
 
-{/*  I'm an experienced software engineer who has owned production systems across their entire lifecycle. That experience has given me a strong understanding of application architecture, integrations, deployment, and operational risk. I'm now applying that engineering foundation to application security. */}
+{/* I'm an experienced software engineer who has owned production systems across their entire lifecycle. That experience has given me a strong understanding of application architecture, integrations, deployment, and operational risk. I'm now applying that engineering foundation to application security. */}

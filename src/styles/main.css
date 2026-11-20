@@ -13,6 +13,12 @@
     --sl-color-main: hsl(var(--sl-color-content));
   }
 
+  body,
+  main {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
   ul {
     list-style: disc;
     margin-left: 1.4rem;
@@ -159,8 +165,8 @@
 
   @media print {
     html {
-      font-size: 10px !important;
-    },
+      font-size: 11px !important;
+    }
     h3,
     th,
     th a {
@@ -242,7 +248,7 @@
       grid-area: actions;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-align: left;
       grid-area: title;
     }
@@ -267,6 +273,10 @@
 }
 
 @media print {
+  footer {
+    display: none;
+  }
+
   .hero-wrapper {
     .actions {
       grid-area: unset;
