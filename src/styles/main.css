@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 @layer components {
@@ -14,8 +14,17 @@
   }
 
   ul {
-      list-style: disc;
-      margin-left: 1.4rem;
+    list-style: disc;
+    margin-left: 1.4rem;
+  }
+  hr,
+  .project,
+  .project * {
+    margin-top: 0;
+  }
+
+  hr {
+    border-bottom: 1px solid black;
   }
 
   ul > li > i {
@@ -105,17 +114,18 @@
   }
 
   .card-grid:has(#my-links),
-  starlight-theme-select, .pagination-links {
+  starlight-theme-select,
+  .pagination-links {
     display: none;
   }
   .sl-heading-wrapper,
   .sl-heading-wrapper.level-h2 {
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 
   h2,
   .title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -124,8 +134,9 @@
   th:first-of-type {
     text-decoration: underline;
     text-align: left;
-    font-size: 1.1rem;
     font-weight: 800;
+    font-size: 1rem;
+    margin-top: 0;
   }
 
   @media (max-width: 1150px) {
@@ -147,19 +158,9 @@
   }
 
   @media print {
-      .project,
-    ul {
-      break-inside: avoid;
-    }
-
-    /*table {
-            margin-top: unset;
-        }*/
-
-    h2 {
-      text-decoration: underline;
-    }
-
+    html {
+      font-size: 10px !important;
+    },
     h3,
     th,
     th a {
@@ -241,6 +242,7 @@
       grid-area: actions;
     }
     h1 {
+      font-size: 2rem;
       text-align: left;
       grid-area: title;
     }
@@ -251,6 +253,16 @@
       flex-wrap: wrap;
       justify-content: space-between;
     }
+  }
+
+  .box,
+  .box p {
+    margin-top: 0;
+  }
+
+  #solutionsartisanltd,
+  #viaerowireless {
+    margin-top: 0.5rem;
   }
 }
 

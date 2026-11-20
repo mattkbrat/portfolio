@@ -12,10 +12,12 @@ links:
   - mattkbrat.com
 hero:
   tagline:
-    Full Stack Software Engineer with 5+ years of experience building telecommunications platforms, operational tooling,
-    and business applications. Delivered systems serving 100,000+ subscribers, reduced dealership bad debt by 40%, and
-    built monitoring infrastructure supporting 100+ live camera deployments. Specializes in TypeScript, React/Next.js,
-    PostgreSQL, and automation-driven solutions.
+    <b>Lead Software Engineer · Full Stack · AppSec-Focused</b>
+    <br/>
+    5+ years of experience designing and maintaining production systems across telecommunications and business applications. 
+    Owns architecture, development, and deployment of platforms supporting a carrier serving 100,000+ subscribers, with experience in 
+    external integrations, distributed messaging, and operational monitoring. Currently expanding into application security 
+    through secure development practices, vulnerability management, and CI/CD security integration.
   actions:
     - text: LinkedIn
       link: https://www.linkedin.com/in/mattkbrat/
@@ -37,120 +39,62 @@ import SmppDetails from "../../components/smpp/details.astro"
 import "../../styles/resume.css"
 
 
-## Skills
-
-- <i>Primary:</i> Next.js, Node/Bun, PostgreSQL, React, HTML, CSS
-- <i>Secondary:</i> Rust, Go, Python, MongoDB, Svelte
-- <i>Infrastructure:</i> Docker, NGINX, Cloudflare R2, S3, Vitest, ElasticSearch
-- <i>Interests:</i> Leadership, Data Analysis, Entrepreneurship, Collaboration, Knowledge Management
-
-## Work Experience
+## Experience
+<hr/>
 
 <HistoryTable
   id="viaero-wireless"
   title="Viaero Wireless"
   startDate="May 2022"
-  description="Full Stack Developer"
+  description="Lead Software Engineer"
 >
-  - Delivered and maintained customer-facing and internal applications supporting **100,000+
-  telecommunications subscribers**.
-  - Built provisioning and operational tooling that reduced manual
-  workflows for customer service, marketing, and network operation teams.
-  - Led cross-functional project teams and partnered with business stakeholders to gather requirements, deliver features,
-  and train end users.
-  - Mentored users and conducted training sessions for newly deployed software systems.
+Lead engineer for customer-facing and internal platforms serving 100,000+ subscribers, collaborating daily with customer service, marketing, network operations, and company leadership.
+ 
+- Built a customer cell provisioning platform integrating multiple external carrier providers through XML-based protocols, translating user actions into provider-specific requests and automating provisioning for a 100,000+ subscriber base.
+- Served as the primary engineer for internal platforms, independently managing architecture and implementation while collaborating closely with operational teams and business stakeholders.
+- Trained three departments of end users on newly deployed systems, sustaining adoption through hands-on sessions and individual troubleshooting.
+- Architected, owned, and deployed a highly available paging and SMS platform, integrating carrier messaging infrastructure, identity management, and asynchronous processing across containerized microservices.
+  - Designed a two-layer monorepo including a transport layer that submits SMS to a carrier SMSC over SMPP and tracks every status transition with RabbitMQ; and a product layer that ingests Huawei network alarms over IMAP, resolves on-call ownership from Microsoft Entra, and dispatches pages via SMS and email.
+  - Built a Rust SMPP transceiver that bridges AMQP and the carrier SMSC as a pure protocol adapter, publishing all status transitions back to the stack for real-time persistence and WebSocket fan-out.
 </HistoryTable>
 
 <HistoryTable
   id="solutions-artisan-ltd"
   title="Solutions Artisan Ltd."
   startDate="May 2019"
-  description="Developer (Contract)"
+  description="Founder & Principal Engineer"
 >
-  - Designed and delivered custom software solutions for small businesses across automotive, retail,
-  and service industries.
-  - Led discovery, development, and client training for custom web applications and websites, including [All About Paws](https://fortmorgangrooming.com) and [CMB
-  Auto Sales](https://cmbautosales.com).
+Founded an independent software consultancy providing bespoke systems for locally owned businesses.
+
+*Flagship engagement*: AutoFLP, for a family-owned auto dealership group
+
+- Designed and shipped a bespoke full-stack application for dealership finance workflows after running discovery with owners and staff, cutting average transaction time from 30 minutes to 7 minutes.
+- Built data analytics surfacing real-time payment status and past-due alerting for a previously-offline operation, cutting dealer bad debt by roughly 40%.
+- Owned the full software lifecycle, including requirements discovery, architecture, development, deployment, cloud storage integration, and production maintenance.
+
+Other work including marketing websites for <a href="https://fortmorgangrooming.com">All About Paws Pet Spa, LLC.</a> and <a href="https://cmbautosales.com">CMB Auto Sales</a>
+
 </HistoryTable>
 
-## Projects
 
-<HistoryTable
-  id="weather-monitoring"
-  title="Advanced Weather Monitoring"
-  startDate="May 2022"
-  description="Delivers critical weather monitoring capabilities to local broadcasters"
-  href="https://cameras.viaero.com"
->
-  - Empowered news reporting teams with tools to facilitate real-time monitoring on weather and police activity.
-  - Manages, streams, and captures more than **100 camera towers** spanning multiple geographic regions.
-  - Control VAPIX cameras through a Bun server and a TanStack Start web application.
-  - Integrates with Google APIs to deliver video to our audience through GCP's YouTube endpoints.
-</HistoryTable>
+<div class="box">
+## Skills
+<hr/>
 
-<HistoryTable
-  id="smpp-stack"
-  title="Paging and SMS platform"
-  startDate="Feb 2026"
-  endDate="Aug 2026"
-  description="Eliminated a legacy Windows application and reduced operational maintenance overhead"
-  PopoverContent={SmppDetails}
->
-  - Led end-to-end delivery of a mission-critical paging and SMS platform, replacing a legacy Windows application with a high-availability microservices stack (Bun/Elysia, Rust, RabbitMQ, PostgreSQL) deployed on Docker Swarm and serving the full customer service team and 30 rotating on-call networking staff.
-  - Architected a two-layer monorepo: a transport layer that submits SMS to a carrier SMSC over SMPP and tracks every status transition; and a product layer that ingests Huawei network alarms over IMAP, resolves on-call ownership from Microsoft Entra, and dispatches pages via SMS and email.
-  - Built a Rust SMPP transceiver that bridges AMQP and the carrier SMSC as a pure protocol adapter, handling up to **100 messages/second** and publishing all status transitions back to the stack for real-time persistence and WebSocket fan-out.
-  - Owned full lifecycle of the system, including requirements gathering, stakeholder collaboration, implementation, and deployment.
-  - Ensured reliable, 24/7 on-call paging and customer communication with no single point of failure.
-</HistoryTable>
+**Primary:** TypeScript/JavaScript, Node, React, Next.js, SQL (PostgreSQL)
 
-<HistoryTable
-  id="cell-provisioning"
-  title="Customer Cell Provisioning"
-  startDate="Dec 2022"
-  endDate="May 2023"
-  description="Interact with provisioner nodes from multiple providers on Viaero's network"
->
-  - Developed a telecommunications provisioning platform using Next.js, Typescript, and XML-based
-  carrier integrations.
-  - Automated customer account provisioning workflows for a subscriber base
-  exceeding 100,000 customers.
-  - Reduced manual provisioning effort by translating user actions into provider-specific XML requests.
-</HistoryTable>
+**Security (developing):** OWASP Top 10, dependency and container vulnerability scanning (Trivy), CI/CD security integration (Jenkins)
 
-<HistoryTable
-  id="netops-applications"
-  hidden
-  title="Netops Applications"
-  startDate="May 2022"
-  description="Collaborate with company leaders to deploy mission-critical software"
->
-  - Facilitated individual troubleshooting for 150+ fiber-based corporate accounts with data
-  visualization.
-  - Surfaced, tracked, and delivered equipment alarms by reading IMAP mailboxes and
-  sending team-based and individual alerts.
-</HistoryTable>
+**Integration & infrastructure:** REST APIs, XML carrier integrations, IMAP ingestion, Cloudflare R2/S3, ElasticSearch, Docker, NGINX
 
-<HistoryTable
-  id="autoflp"
-  title="AutoFLP"
-  startDate="Jun 2019"
-  description="Transforms operational efficiency for family-owned auto dealerships"
-  href="https://github.com/mattkbrat/autoflp-web"
->
-  - **Cut bad debts by ~40%** through advanced data analytics, surfacing of real-time payments, and
-  past-due alerting for a previously-offline application.
-  - Shrank average **transaction time from 30 minutes to 7 minutes** through smart integration of customer information.
-  - Reduce administrative overhead by streamlining previously manual processes with a bespoke fullstack
-  application.
-  - Integrated Cloudflare R2/S3 for PDF document management.
-</HistoryTable>
+**Working knowledge:** Python, Go, Rust, MongoDB, Svelte, Vitest
+</div>
 
+<div class="box">
 ## Education
+<hr/>
 
-<HistoryTable
-  id="university"
-  title="University of Northern Colorado"
-  description="Bachelor of Business Administration, Computer Information Systems"
->
-  - Treasurer, Phi Sigma Pi National Honor Fraternity; Scholar of the Reisher Family
-</HistoryTable>
+B.B.A., Computer Information Systems, University of Northern Colorado; Reisher Family Scholarship, Phi Sigma Pi honor fraternity
+</div>
+
+{/*  I'm an experienced software engineer who has owned production systems across their entire lifecycle. That experience has given me a strong understanding of application architecture, integrations, deployment, and operational risk. I'm now applying that engineering foundation to application security. */}
